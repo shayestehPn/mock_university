@@ -3,8 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../utils/constants.dart';
 
-
 class SvgImage {
-  static final Widget svgLogoSplash =
-      SvgPicture.asset("${svgImagesLocation}splash_logo.svg");
+  static final Widget backIcon =
+      SvgPicture.asset("${svgImagesLocation}back.svg");
 }

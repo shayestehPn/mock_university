@@ -39,7 +39,6 @@ class App extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          //
           supportedLocales: const [
             Locale('fa'),
             Locale('en'),
@@ -47,7 +46,7 @@ class App extends StatelessWidget {
           locale: const Locale('en'),
           theme: AppTheme.theme,
           onGenerateRoute: (_) => MaterialPageRoute<void>(builder: (_) {
-            return const OnBoardingPage();
+            return  OnBoardingPage();
           }),
         );
       },

@@ -25,3 +25,10 @@ final TextStyle errorTextStyle = TextStyle(
     fontSize: 10.sp,
     fontWeight: FontWeight.w500,
     color: error);
+
+final BoxShadow cardBoxShadow = BoxShadow(
+  color: Colors.grey.withOpacity(0.5),
+  spreadRadius: 1,
+  blurRadius: 4,
+  offset: const Offset(0, 3),
+);
