@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mock_university/presentation/components/home/categories_list_content.dart';
 import 'package:mock_university/presentation/components/home/home_app_bar.dart';
-import 'package:mock_university/utils/extensions/context_extension.dart';
+import 'package:mock_university/presentation/components/home/popular_courses_list_content.dart';
+import 'package:mock_university/presentation/components/home/recommended_list_content.dart';
+import 'package:mock_university/presentation/components/home/top_courses_list_content.dart';
 
 import '../../business_logic/home/home_cubit.dart';
 import '../../business_logic/home/home_state.dart';
 import '../../utils/enums/api_request_status.dart';
-import '../../utils/ui/colors.dart';
 import '../components/general/app_refresh_indicator.dart';
-import '../components/home/course_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,6 +24,9 @@ class HomePage extends StatelessWidget {
         return cubit;
       },
       child: BlocBuilder<HomeCubit, HomeState>(
+        buildWhen: (pState, nState) {
+          return pState.getHomeDataStatus != nState.getHomeDataStatus;
+        },
         builder: (context, state) {
           if (state.getHomeDataStatus == ApiRequestStatus.loading ||
               state.getHomeDataStatus == ApiRequestStatus.initial ||
@@ -41,24 +45,11 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 shrinkWrap: false,
                 padding: const EdgeInsets.all(0),
-                children: [
-                  Padding(
-                      padding: EdgeInsets.only(left: 30.w, top: 10.h),
-                      child: Text("Recommended for You",
-                          style: context.appTextTheme.titleMedium
-                              ?.copyWith(color: black.withOpacity(0.6)))),
-                  Container(
-                    height: 184.h,
-                    margin: EdgeInsets.only(top: 15.h),
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: state.homeData!.recommendedList.length,
-                        padding: EdgeInsets.only(left: 17.w),
-                        itemBuilder: (context, index) => CourseCard(
-                              courseEntity:
-                                  state.homeData!.recommendedList[index],
-                            )),
-                  )
+                children: const [
+                  RecommendedListContent(),
+                  CategoriesListContent(),
+                  TopCoursesListContent(),
+                  PopularCoursesListContent()
                 ],
               ),
             ),

@@ -151,7 +151,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeStateImpl implements _HomeState {
-  const _$HomeStateImpl(
+  _$HomeStateImpl(
       {required this.getHomeDataStatus, this.homeData, this.errorObject});
 
   @override
@@ -191,7 +191,7 @@ class _$HomeStateImpl implements _HomeState {
 }
 
 abstract class _HomeState implements HomeState {
-  const factory _HomeState(
+  factory _HomeState(
       {required final ApiRequestStatus getHomeDataStatus,
       final HomeData? homeData,
       final ErrorEntity? errorObject}) = _$HomeStateImpl;

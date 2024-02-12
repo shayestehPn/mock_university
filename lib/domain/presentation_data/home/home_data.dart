@@ -4,9 +4,9 @@ import '../../entity/general/course_entity.dart';
 
 part "home_data.freezed.dart";
 
-@freezed
+@unfreezed
 class HomeData with _$HomeData {
-  const factory HomeData(
+   factory HomeData(
       {required List<CourseEntity> recommendedList,
       required List<CourseEntity> topCoursesList,
       required List<CourseEntity> popularCoursesList,

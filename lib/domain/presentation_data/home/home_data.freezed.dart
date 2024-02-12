@@ -17,12 +17,22 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeData {
   List<CourseEntity> get recommendedList => throw _privateConstructorUsedError;
+  set recommendedList(List<CourseEntity> value) =>
+      throw _privateConstructorUsedError;
   List<CourseEntity> get topCoursesList => throw _privateConstructorUsedError;
+  set topCoursesList(List<CourseEntity> value) =>
+      throw _privateConstructorUsedError;
   List<CourseEntity> get popularCoursesList =>
+      throw _privateConstructorUsedError;
+  set popularCoursesList(List<CourseEntity> value) =>
       throw _privateConstructorUsedError;
   List<CourseCategoryEntity> get categoriesList =>
       throw _privateConstructorUsedError;
+  set categoriesList(List<CourseCategoryEntity> value) =>
+      throw _privateConstructorUsedError;
   CourseEntity? get inProgressCourse => throw _privateConstructorUsedError;
+  set inProgressCourse(CourseEntity? value) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeDataCopyWith<HomeData> get copyWith =>
@@ -138,19 +148,19 @@ class __$$HomeDataImplCopyWithImpl<$Res>
   }) {
     return _then(_$HomeDataImpl(
       recommendedList: null == recommendedList
-          ? _value._recommendedList
+          ? _value.recommendedList
           : recommendedList // ignore: cast_nullable_to_non_nullable
               as List<CourseEntity>,
       topCoursesList: null == topCoursesList
-          ? _value._topCoursesList
+          ? _value.topCoursesList
           : topCoursesList // ignore: cast_nullable_to_non_nullable
               as List<CourseEntity>,
       popularCoursesList: null == popularCoursesList
-          ? _value._popularCoursesList
+          ? _value.popularCoursesList
           : popularCoursesList // ignore: cast_nullable_to_non_nullable
               as List<CourseEntity>,
       categoriesList: null == categoriesList
-          ? _value._categoriesList
+          ? _value.categoriesList
           : categoriesList // ignore: cast_nullable_to_non_nullable
               as List<CourseCategoryEntity>,
       inProgressCourse: freezed == inProgressCourse
@@ -164,83 +174,28 @@ class __$$HomeDataImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeDataImpl implements _HomeData {
-  const _$HomeDataImpl(
-      {required final List<CourseEntity> recommendedList,
-      required final List<CourseEntity> topCoursesList,
-      required final List<CourseEntity> popularCoursesList,
-      required final List<CourseCategoryEntity> categoriesList,
-      this.inProgressCourse})
-      : _recommendedList = recommendedList,
-        _topCoursesList = topCoursesList,
-        _popularCoursesList = popularCoursesList,
-        _categoriesList = categoriesList;
-
-  final List<CourseEntity> _recommendedList;
-  @override
-  List<CourseEntity> get recommendedList {
-    if (_recommendedList is EqualUnmodifiableListView) return _recommendedList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_recommendedList);
-  }
-
-  final List<CourseEntity> _topCoursesList;
-  @override
-  List<CourseEntity> get topCoursesList {
-    if (_topCoursesList is EqualUnmodifiableListView) return _topCoursesList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_topCoursesList);
-  }
-
-  final List<CourseEntity> _popularCoursesList;
-  @override
-  List<CourseEntity> get popularCoursesList {
-    if (_popularCoursesList is EqualUnmodifiableListView)
-      return _popularCoursesList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_popularCoursesList);
-  }
-
-  final List<CourseCategoryEntity> _categoriesList;
-  @override
-  List<CourseCategoryEntity> get categoriesList {
-    if (_categoriesList is EqualUnmodifiableListView) return _categoriesList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_categoriesList);
-  }
+  _$HomeDataImpl(
+      {required this.recommendedList,
+      required this.topCoursesList,
+      required this.popularCoursesList,
+      required this.categoriesList,
+      this.inProgressCourse});
 
   @override
-  final CourseEntity? inProgressCourse;
+  List<CourseEntity> recommendedList;
+  @override
+  List<CourseEntity> topCoursesList;
+  @override
+  List<CourseEntity> popularCoursesList;
+  @override
+  List<CourseCategoryEntity> categoriesList;
+  @override
+  CourseEntity? inProgressCourse;
 
   @override
   String toString() {
     return 'HomeData(recommendedList: $recommendedList, topCoursesList: $topCoursesList, popularCoursesList: $popularCoursesList, categoriesList: $categoriesList, inProgressCourse: $inProgressCourse)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HomeDataImpl &&
-            const DeepCollectionEquality()
-                .equals(other._recommendedList, _recommendedList) &&
-            const DeepCollectionEquality()
-                .equals(other._topCoursesList, _topCoursesList) &&
-            const DeepCollectionEquality()
-                .equals(other._popularCoursesList, _popularCoursesList) &&
-            const DeepCollectionEquality()
-                .equals(other._categoriesList, _categoriesList) &&
-            (identical(other.inProgressCourse, inProgressCourse) ||
-                other.inProgressCourse == inProgressCourse));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_recommendedList),
-      const DeepCollectionEquality().hash(_topCoursesList),
-      const DeepCollectionEquality().hash(_popularCoursesList),
-      const DeepCollectionEquality().hash(_categoriesList),
-      inProgressCourse);
 
   @JsonKey(ignore: true)
   @override
@@ -250,23 +205,28 @@ class _$HomeDataImpl implements _HomeData {
 }
 
 abstract class _HomeData implements HomeData {
-  const factory _HomeData(
-      {required final List<CourseEntity> recommendedList,
-      required final List<CourseEntity> topCoursesList,
-      required final List<CourseEntity> popularCoursesList,
-      required final List<CourseCategoryEntity> categoriesList,
-      final CourseEntity? inProgressCourse}) = _$HomeDataImpl;
+  factory _HomeData(
+      {required List<CourseEntity> recommendedList,
+      required List<CourseEntity> topCoursesList,
+      required List<CourseEntity> popularCoursesList,
+      required List<CourseCategoryEntity> categoriesList,
+      CourseEntity? inProgressCourse}) = _$HomeDataImpl;
 
   @override
   List<CourseEntity> get recommendedList;
+  set recommendedList(List<CourseEntity> value);
   @override
   List<CourseEntity> get topCoursesList;
+  set topCoursesList(List<CourseEntity> value);
   @override
   List<CourseEntity> get popularCoursesList;
+  set popularCoursesList(List<CourseEntity> value);
   @override
   List<CourseCategoryEntity> get categoriesList;
+  set categoriesList(List<CourseCategoryEntity> value);
   @override
   CourseEntity? get inProgressCourse;
+  set inProgressCourse(CourseEntity? value);
   @override
   @JsonKey(ignore: true)
   _$$HomeDataImplCopyWith<_$HomeDataImpl> get copyWith =>

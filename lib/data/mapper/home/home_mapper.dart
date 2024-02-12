@@ -9,8 +9,8 @@ import '../../../utils/ui/colors.dart';
 
 class HomeMapper {
   static HomeData map() {
-    List<CourseEntity> coursesList = [];
-    coursesList.add(const CourseEntity(
+    List<CourseEntity> recommendedList = [];
+    recommendedList.add(const CourseEntity(
       id: "0",
       name: "Core java",
       imageUrl:
@@ -19,7 +19,7 @@ class HomeMapper {
       totalTime: TimeEntity(hour: 1, minute: 30, second: 0),
       totalNumberOfQuestions: 30,
     ));
-    coursesList.add(const CourseEntity(
+    recommendedList.add(const CourseEntity(
         id: "1",
         name: "AWS Certification",
         imageUrl:
@@ -27,7 +27,7 @@ class HomeMapper {
         isSaved: true,
         totalTime: TimeEntity(hour: 0, minute: 55, second: 0),
         totalNumberOfQuestions: 23));
-    coursesList.add(const CourseEntity(
+    recommendedList.add(const CourseEntity(
         id: "1",
         name: "AWS Certification",
         imageUrl:
@@ -36,7 +36,7 @@ class HomeMapper {
         totalTime: TimeEntity(hour: 0, minute: 55, second: 0),
         totalNumberOfQuestions: 23));
 
-    coursesList.add(const CourseEntity(
+    recommendedList.add(const CourseEntity(
         id: "3",
         name: "React JS",
         imageUrl:
@@ -74,7 +74,7 @@ class HomeMapper {
       id: "3",
       name: "Finance and Accounting",
       imageUrl:
-          "https://banner2.cleanpng.com/20180524/yta/kisspng-computer-icons-finance-icon-design-5b0701f40706c6.5483000815271859080288.jpg",
+          "https://cdn-icons-png.flaticon.com/512/4541/4541461.png",
       nameColor: Color(0xff3550DC),
     ));
 
@@ -89,10 +89,48 @@ class HomeMapper {
         totalNumberOfQuestions: 23,
         numberOfAnsweredQuestions: 10);
 
+    List<CourseEntity> topCoursesList = [];
+    topCoursesList.add(const CourseEntity(
+        id: "1",
+        name: "AWS Certification",
+        imageUrl:
+        "https://play-lh.googleusercontent.com/u_f6r0YV93zRmSO4-SBUlyzpnyNAI0gNATKat6URmcPvtmuCl2P7K9kr6al2A2InHrE",
+        isSaved: true,
+        totalTime: TimeEntity(hour: 0, minute: 55, second: 0),
+        totalNumberOfQuestions: 23));
+
+    topCoursesList.add(const CourseEntity(
+        id: "3",
+        name: "React JS",
+        imageUrl:
+        "https://miro.medium.com/v2/resize:fit:1200/1*WA_9JsyqFkge2HwYKcdJQw.png",
+        isSaved: true,
+        totalTime: TimeEntity(hour: 2, minute: 55, second: 0),
+        totalNumberOfQuestions: 23));
+
+    List<CourseEntity> popularCoursesList = [];
+    popularCoursesList.add(const CourseEntity(
+        id: "1",
+        name: "AWS Certification",
+        imageUrl:
+        "https://play-lh.googleusercontent.com/u_f6r0YV93zRmSO4-SBUlyzpnyNAI0gNATKat6URmcPvtmuCl2P7K9kr6al2A2InHrE",
+        isSaved: true,
+        totalTime: TimeEntity(hour: 0, minute: 55, second: 0),
+        totalNumberOfQuestions: 23));
+
+    popularCoursesList.add(const CourseEntity(
+        id: "3",
+        name: "React JS",
+        imageUrl:
+        "https://miro.medium.com/v2/resize:fit:1200/1*WA_9JsyqFkge2HwYKcdJQw.png",
+        isSaved: true,
+        totalTime: TimeEntity(hour: 2, minute: 55, second: 0),
+        totalNumberOfQuestions: 23));
+
     return HomeData(
-        recommendedList: coursesList,
-        topCoursesList: coursesList,
-        popularCoursesList: coursesList,
+        recommendedList: recommendedList,
+        topCoursesList: topCoursesList,
+        popularCoursesList: popularCoursesList,
         categoriesList: categoriesList,
         inProgressCourse: inProgressCourse);
   }

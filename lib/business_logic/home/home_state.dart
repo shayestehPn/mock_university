@@ -9,7 +9,7 @@ part 'home_state.freezed.dart';
 
 @freezed
 class HomeState with _$HomeState {
-  const factory HomeState({
+   factory HomeState({
     required ApiRequestStatus getHomeDataStatus,
     HomeData? homeData,
     ErrorEntity? errorObject,

@@ -51,4 +51,12 @@ class SvgImage {
   static final Widget accountUnSelectedIcon = SvgPicture.asset(
       "${svgImagesLocation}account.svg",
       color: const Color(0xff808080));
+
+  static final Widget savedBlackIcon = SvgPicture.asset(
+      "${svgImagesLocation}saved.svg",
+      color: black);
+
+  static final Widget unsavedBlackIcon = SvgPicture.asset(
+      "${svgImagesLocation}unsaved.svg",
+      color: black);
 }
