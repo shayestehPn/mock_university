@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mock_university/presentation/pages/home_page.dart';
 import 'package:mock_university/utils/ui/colors.dart';
 
 import '../../business_logic/primary/primary_cubit.dart';
@@ -10,7 +11,9 @@ class PrimaryPage extends StatelessWidget {
 
   final PageController _pageController = PageController(keepPage: true);
 
-  List pageViewItem = [];
+  List pageViewItem = [
+    const HomePage()
+  ];
 
   @override
   Widget build(BuildContext context) {

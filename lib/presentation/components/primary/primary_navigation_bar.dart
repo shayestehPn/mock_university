@@ -15,67 +15,80 @@ class PrimaryNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PrimaryCubit,int>(
-        builder: (context,state){
-          return Container(
-            height: 70.h,
-            decoration: BoxDecoration(
-              boxShadow: [cardBoxShadow],
-              color: white,
+    return BlocBuilder<PrimaryCubit, int>(builder: (context, state) {
+      return Container(
+        height: 70.h,
+        decoration: BoxDecoration(
+          boxShadow: [cardBoxShadow],
+          color: white,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            NavigationBarItem(
+              selectedIcon: SvgImage.homeSelectedIcon,
+              unselectedIcon: SvgImage.homeUnSelectedIcon,
+              isSelected: state == 0,
+              title: "Home",
+              onClick: () {
+                context.read<PrimaryCubit>().setCurrentPageIndex(0);
+                pageController.animateToPage(0,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.linear);
+              },
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                NavigationBarItem(
-                    selectedIcon: SvgImage.homeSelectedIcon,
-                    unselectedIcon: SvgImage.homeUnSelectedIcon,
-                    isSelected: state==0,
-                    title: "Home",
-                  onClick: () {
-                      context.read<PrimaryCubit>().setCurrentPageIndex(0);
-                  },
-                ),
-                NavigationBarItem(
-                  selectedIcon: SvgImage.searchSelectedIcon,
-                  unselectedIcon: SvgImage.searchUnSelectedIcon,
-                  isSelected: state==1,
-                  title: "Search",
-                  onClick: () {
-                    context.read<PrimaryCubit>().setCurrentPageIndex(1);
-                  },
-                ),
-                NavigationBarItem(
-                  selectedIcon: SvgImage.examsSelectedIcon,
-                  unselectedIcon: SvgImage.examsUnSelectedIcon,
-                  isSelected: state==2,
-                  title: "Exams",
-                  onClick: () {
-                    context.read<PrimaryCubit>().setCurrentPageIndex(2);
-                  },
-                ),
-                NavigationBarItem(
-                  selectedIcon: SvgImage.wishListSelectedIcon,
-                  unselectedIcon: SvgImage.wishListUnSelectedIcon,
-                  isSelected: state==3,
-                  title: "Wishlist",
-                  onClick: () {
-                    context.read<PrimaryCubit>().setCurrentPageIndex(3);
-                  },
-                ),
-                NavigationBarItem(
-                  selectedIcon: SvgImage.accountSelectedIcon,
-                  unselectedIcon: SvgImage.accountUnSelectedIcon,
-                  isSelected: state==4,
-                  title: "Account",
-                  onClick: () {
-                    context.read<PrimaryCubit>().setCurrentPageIndex(4);
-                  },
-                ),
-
-              ],
+            NavigationBarItem(
+              selectedIcon: SvgImage.searchSelectedIcon,
+              unselectedIcon: SvgImage.searchUnSelectedIcon,
+              isSelected: state == 1,
+              title: "Search",
+              onClick: () {
+                context.read<PrimaryCubit>().setCurrentPageIndex(1);
+                pageController.animateToPage(1,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.linear);
+              },
             ),
-          );
-        });
+            NavigationBarItem(
+              selectedIcon: SvgImage.examsSelectedIcon,
+              unselectedIcon: SvgImage.examsUnSelectedIcon,
+              isSelected: state == 2,
+              title: "Exams",
+              onClick: () {
+                context.read<PrimaryCubit>().setCurrentPageIndex(2);
+                pageController.animateToPage(2,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.linear);
+              },
+            ),
+            NavigationBarItem(
+              selectedIcon: SvgImage.wishListSelectedIcon,
+              unselectedIcon: SvgImage.wishListUnSelectedIcon,
+              isSelected: state == 3,
+              title: "Wishlist",
+              onClick: () {
+                context.read<PrimaryCubit>().setCurrentPageIndex(3);
+                pageController.animateToPage(3,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.linear);
+              },
+            ),
+            NavigationBarItem(
+              selectedIcon: SvgImage.accountSelectedIcon,
+              unselectedIcon: SvgImage.accountUnSelectedIcon,
+              isSelected: state == 4,
+              title: "Account",
+              onClick: () {
+                context.read<PrimaryCubit>().setCurrentPageIndex(4);
+                pageController.animateToPage(4,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.linear);
+              },
+            ),
+          ],
+        ),
+      );
+    });
   }
 }
