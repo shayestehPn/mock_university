@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:mock_university/business_logic/onboarding/onboarding_cubit.dart';
 import 'package:mock_university/presentation/components/general/app_sized_box.dart';
 import 'package:mock_university/presentation/components/general/custom_filled_button.dart';
 import 'package:mock_university/presentation/components/onboarding/onboarding_back_button.dart';
+import 'package:mock_university/presentation/pages/primary_page.dart';
+import 'package:mock_university/utils/dependency_injection.dart';
 
 class OnBoardingButtons extends StatelessWidget {
   const OnBoardingButtons({super.key, required this.pageController});
@@ -60,13 +63,17 @@ class OnBoardingButtons extends StatelessWidget {
                               ? "start practicing"
                               : "continue",
                       onClick: () {
-                        pageController.animateToPage(state + 1,
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.linear);
+                        if(state==4){
+                          Get.to(()=>PrimaryPage(),binding: AppBinding());
+                        }else{
+                          pageController.animateToPage(state + 1,
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.linear);
 
-                        context
-                            .read<OnBoardingCubit>()
-                            .increaseCurrentPageIndex();
+                          context
+                              .read<OnBoardingCubit>()
+                              .increaseCurrentPageIndex();
+                        }
                       }),
                 ),
               )
