@@ -30,8 +30,9 @@ mixin _$HomeData {
       throw _privateConstructorUsedError;
   set categoriesList(List<CourseCategoryEntity> value) =>
       throw _privateConstructorUsedError;
-  CourseEntity? get inProgressCourse => throw _privateConstructorUsedError;
-  set inProgressCourse(CourseEntity? value) =>
+  List<CourseEntity>? get inProgressCoursesList =>
+      throw _privateConstructorUsedError;
+  set inProgressCoursesList(List<CourseEntity>? value) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,9 +50,7 @@ abstract class $HomeDataCopyWith<$Res> {
       List<CourseEntity> topCoursesList,
       List<CourseEntity> popularCoursesList,
       List<CourseCategoryEntity> categoriesList,
-      CourseEntity? inProgressCourse});
-
-  $CourseEntityCopyWith<$Res>? get inProgressCourse;
+      List<CourseEntity>? inProgressCoursesList});
 }
 
 /// @nodoc
@@ -71,7 +70,7 @@ class _$HomeDataCopyWithImpl<$Res, $Val extends HomeData>
     Object? topCoursesList = null,
     Object? popularCoursesList = null,
     Object? categoriesList = null,
-    Object? inProgressCourse = freezed,
+    Object? inProgressCoursesList = freezed,
   }) {
     return _then(_value.copyWith(
       recommendedList: null == recommendedList
@@ -90,23 +89,11 @@ class _$HomeDataCopyWithImpl<$Res, $Val extends HomeData>
           ? _value.categoriesList
           : categoriesList // ignore: cast_nullable_to_non_nullable
               as List<CourseCategoryEntity>,
-      inProgressCourse: freezed == inProgressCourse
-          ? _value.inProgressCourse
-          : inProgressCourse // ignore: cast_nullable_to_non_nullable
-              as CourseEntity?,
+      inProgressCoursesList: freezed == inProgressCoursesList
+          ? _value.inProgressCoursesList
+          : inProgressCoursesList // ignore: cast_nullable_to_non_nullable
+              as List<CourseEntity>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $CourseEntityCopyWith<$Res>? get inProgressCourse {
-    if (_value.inProgressCourse == null) {
-      return null;
-    }
-
-    return $CourseEntityCopyWith<$Res>(_value.inProgressCourse!, (value) {
-      return _then(_value.copyWith(inProgressCourse: value) as $Val);
-    });
   }
 }
 
@@ -123,10 +110,7 @@ abstract class _$$HomeDataImplCopyWith<$Res>
       List<CourseEntity> topCoursesList,
       List<CourseEntity> popularCoursesList,
       List<CourseCategoryEntity> categoriesList,
-      CourseEntity? inProgressCourse});
-
-  @override
-  $CourseEntityCopyWith<$Res>? get inProgressCourse;
+      List<CourseEntity>? inProgressCoursesList});
 }
 
 /// @nodoc
@@ -144,7 +128,7 @@ class __$$HomeDataImplCopyWithImpl<$Res>
     Object? topCoursesList = null,
     Object? popularCoursesList = null,
     Object? categoriesList = null,
-    Object? inProgressCourse = freezed,
+    Object? inProgressCoursesList = freezed,
   }) {
     return _then(_$HomeDataImpl(
       recommendedList: null == recommendedList
@@ -163,10 +147,10 @@ class __$$HomeDataImplCopyWithImpl<$Res>
           ? _value.categoriesList
           : categoriesList // ignore: cast_nullable_to_non_nullable
               as List<CourseCategoryEntity>,
-      inProgressCourse: freezed == inProgressCourse
-          ? _value.inProgressCourse
-          : inProgressCourse // ignore: cast_nullable_to_non_nullable
-              as CourseEntity?,
+      inProgressCoursesList: freezed == inProgressCoursesList
+          ? _value.inProgressCoursesList
+          : inProgressCoursesList // ignore: cast_nullable_to_non_nullable
+              as List<CourseEntity>?,
     ));
   }
 }
@@ -179,7 +163,7 @@ class _$HomeDataImpl implements _HomeData {
       required this.topCoursesList,
       required this.popularCoursesList,
       required this.categoriesList,
-      this.inProgressCourse});
+      this.inProgressCoursesList});
 
   @override
   List<CourseEntity> recommendedList;
@@ -190,11 +174,11 @@ class _$HomeDataImpl implements _HomeData {
   @override
   List<CourseCategoryEntity> categoriesList;
   @override
-  CourseEntity? inProgressCourse;
+  List<CourseEntity>? inProgressCoursesList;
 
   @override
   String toString() {
-    return 'HomeData(recommendedList: $recommendedList, topCoursesList: $topCoursesList, popularCoursesList: $popularCoursesList, categoriesList: $categoriesList, inProgressCourse: $inProgressCourse)';
+    return 'HomeData(recommendedList: $recommendedList, topCoursesList: $topCoursesList, popularCoursesList: $popularCoursesList, categoriesList: $categoriesList, inProgressCoursesList: $inProgressCoursesList)';
   }
 
   @JsonKey(ignore: true)
@@ -210,7 +194,7 @@ abstract class _HomeData implements HomeData {
       required List<CourseEntity> topCoursesList,
       required List<CourseEntity> popularCoursesList,
       required List<CourseCategoryEntity> categoriesList,
-      CourseEntity? inProgressCourse}) = _$HomeDataImpl;
+      List<CourseEntity>? inProgressCoursesList}) = _$HomeDataImpl;
 
   @override
   List<CourseEntity> get recommendedList;
@@ -225,8 +209,8 @@ abstract class _HomeData implements HomeData {
   List<CourseCategoryEntity> get categoriesList;
   set categoriesList(List<CourseCategoryEntity> value);
   @override
-  CourseEntity? get inProgressCourse;
-  set inProgressCourse(CourseEntity? value);
+  List<CourseEntity>? get inProgressCoursesList;
+  set inProgressCoursesList(List<CourseEntity>? value);
   @override
   @JsonKey(ignore: true)
   _$$HomeDataImplCopyWith<_$HomeDataImpl> get copyWith =>

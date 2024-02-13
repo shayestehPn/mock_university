@@ -11,5 +11,6 @@ class HomeData with _$HomeData {
       required List<CourseEntity> topCoursesList,
       required List<CourseEntity> popularCoursesList,
       required List<CourseCategoryEntity> categoriesList,
-      CourseEntity? inProgressCourse}) = _HomeData;
+      List<CourseEntity>? inProgressCoursesList
+      }) = _HomeData;
 }

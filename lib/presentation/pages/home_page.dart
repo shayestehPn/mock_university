@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mock_university/presentation/components/home/categories_list_content.dart';
 import 'package:mock_university/presentation/components/home/home_app_bar.dart';
+import 'package:mock_university/presentation/components/home/inprogress_courses_list_content.dart';
 import 'package:mock_university/presentation/components/home/popular_courses_list_content.dart';
 import 'package:mock_university/presentation/components/home/recommended_list_content.dart';
 import 'package:mock_university/presentation/components/home/top_courses_list_content.dart';
@@ -56,8 +57,7 @@ class HomePage extends StatelessWidget {
                     PopularCoursesListContent()
                   ],
                 ),
-                    InProgressCourseCard(
-                        courseEntity: state.homeData!.inProgressCourse!)
+                    const InProgressCoursesListContent()
               ]),
             ),
           );

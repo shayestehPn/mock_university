@@ -78,17 +78,6 @@ class HomeMapper {
       nameColor: Color(0xff3550DC),
     ));
 
-    CourseEntity inProgressCourse = const CourseEntity(
-        id: "3",
-        name: "React JS",
-        imageUrl:
-            "https://miro.medium.com/v2/resize:fit:1200/1*WA_9JsyqFkge2HwYKcdJQw.png",
-        isSaved: true,
-        totalTime: TimeEntity(hour: 2, minute: 55, second: 0),
-        remainingTime: TimeEntity(hour: 0, minute: 30, second: 0),
-        totalNumberOfQuestions: 23,
-        numberOfAnsweredQuestions: 10);
-
     List<CourseEntity> topCoursesList = [];
     topCoursesList.add(const CourseEntity(
         id: "1",
@@ -127,11 +116,34 @@ class HomeMapper {
         totalTime: TimeEntity(hour: 2, minute: 55, second: 0),
         totalNumberOfQuestions: 23));
 
+    List<CourseEntity> inProgressCoursesList = [];
+    inProgressCoursesList.add(const  CourseEntity(
+        id: "3",
+        name: "React JS",
+        imageUrl:
+        "https://miro.medium.com/v2/resize:fit:1200/1*WA_9JsyqFkge2HwYKcdJQw.png",
+        isSaved: true,
+        totalTime: TimeEntity(hour: 2, minute: 55, second: 0),
+        remainingTime: TimeEntity(hour: 0, minute: 30, second: 0),
+        totalNumberOfQuestions: 23,
+        numberOfAnsweredQuestions: 10));
+
+    inProgressCoursesList.add(const  CourseEntity(
+        id: "3",
+        name: "React JS",
+        imageUrl:
+        "https://miro.medium.com/v2/resize:fit:1200/1*WA_9JsyqFkge2HwYKcdJQw.png",
+        isSaved: true,
+        totalTime: TimeEntity(hour: 2, minute: 55, second: 0),
+        remainingTime: TimeEntity(hour: 0, minute: 30, second: 0),
+        totalNumberOfQuestions: 23,
+        numberOfAnsweredQuestions: 1));
+
     return HomeData(
         recommendedList: recommendedList,
         topCoursesList: topCoursesList,
         popularCoursesList: popularCoursesList,
         categoriesList: categoriesList,
-        inProgressCourse: inProgressCourse);
+        inProgressCoursesList: inProgressCoursesList);
   }
 }

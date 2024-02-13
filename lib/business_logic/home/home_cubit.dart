@@ -70,11 +70,13 @@ class HomeCubit extends Cubit<HomeState> {
     ));
   }
 
-  void removeInProgressCourseCard(){
+  void removeInProgressCourse(int index){
+    List<CourseEntity>? coursesList=state.homeData!.inProgressCoursesList;
+    coursesList?.removeAt(index);
     emit(state.copyWith(
-      homeData: state.homeData?.copyWith(
-        inProgressCourse: null
-      )
+        homeData: state.homeData?.copyWith(
+            inProgressCoursesList: coursesList
+        )
     ));
   }
 }

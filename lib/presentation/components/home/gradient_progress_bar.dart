@@ -41,7 +41,6 @@ class _GradientProgressBarState extends State<GradientProgressBar>
             width: double.infinity,
             value: progressAnimation.value,
             backgroundColor: const Color(0xffF0F0F0),
-            height: 6.h,
             gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
