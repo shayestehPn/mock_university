@@ -69,4 +69,12 @@ class HomeCubit extends Cubit<HomeState> {
         )
     ));
   }
+
+  void removeInProgressCourseCard(){
+    emit(state.copyWith(
+      homeData: state.homeData?.copyWith(
+        inProgressCourse: null
+      )
+    ));
+  }
 }

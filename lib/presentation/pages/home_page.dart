@@ -56,10 +56,8 @@ class HomePage extends StatelessWidget {
                     PopularCoursesListContent()
                   ],
                 ),
-                state.homeData?.inProgressCourse != null
-                    ? InProgressCourseCard(
+                    InProgressCourseCard(
                         courseEntity: state.homeData!.inProgressCourse!)
-                    : Container()
               ]),
             ),
           );
