@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mock_university/domain/entity/general/course_entity.dart';
+import 'package:mock_university/presentation/components/general/app_icon_button.dart';
 import 'package:mock_university/presentation/components/general/app_sized_box.dart';
 import 'package:mock_university/presentation/components/general/custom_cached_network_image.dart';
 import 'package:mock_university/presentation/components/general/images/svg_image.dart';
@@ -52,16 +53,15 @@ class InProgressCourseCard extends StatelessWidget {
                         style: context.appTextTheme.titleLarge,
                       ),
                       const WidthSizedBox(width: 42),
-                      GestureDetector(
-                        onTap: () {
+                      AppIconButton(
+                          icon: SizedBox(
+                            height: 18.r,
+                            width: 18.r,
+                            child: SvgImage.trashcanIcon,
+                          ),
+                        onClick: () {
                           removeOnClick();
-                        },
-                        child: SizedBox(
-                          height: 18.r,
-                          width: 18.r,
-                          child: SvgImage.trashcanIcon,
-                        ),
-                      )
+                        },),
                     ],
                   ),
                   getRichText(

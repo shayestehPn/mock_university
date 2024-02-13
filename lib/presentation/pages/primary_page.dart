@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mock_university/presentation/pages/home_page.dart';
+import 'package:mock_university/presentation/pages/wishes_page.dart';
 import 'package:mock_university/utils/ui/colors.dart';
 
 import '../../business_logic/primary/primary_cubit.dart';
@@ -9,10 +10,13 @@ import '../components/primary/primary_navigation_bar.dart';
 class PrimaryPage extends StatelessWidget {
   PrimaryPage({Key? key}) : super(key: key);
 
-  final PageController _pageController = PageController(keepPage: true);
+  final PageController pageController = PageController();
 
-  List pageViewItem = [
+  List pageViewItems = [
+    const HomePage(),const WishesPage(),
+    const HomePage(),const WishesPage(),
     const HomePage()
+
   ];
 
   @override
@@ -29,15 +33,15 @@ class PrimaryPage extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                       children: [
                         PageView.builder(
-                            itemCount: pageViewItem.length,
+                            itemCount: pageViewItems.length,
                             scrollDirection: Axis.horizontal,
                             physics: const NeverScrollableScrollPhysics(),
-                            controller: _pageController,
+                            controller: pageController,
                             itemBuilder: (context, position) {
-                              return pageViewItem[position];
+                              return pageViewItems[position];
                             }),
                         PrimaryNavigationBar(
-                          pageController: _pageController,
+                          pageController: pageController,
                         ),
                       ],
                     )),

@@ -33,9 +33,7 @@ class PrimaryNavigationBar extends StatelessWidget {
               title: "Home",
               onClick: () {
                 context.read<PrimaryCubit>().setCurrentPageIndex(0);
-                pageController.animateToPage(0,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.linear);
+                changePage(0);
               },
             ),
             NavigationBarItem(
@@ -45,9 +43,7 @@ class PrimaryNavigationBar extends StatelessWidget {
               title: "Search",
               onClick: () {
                 context.read<PrimaryCubit>().setCurrentPageIndex(1);
-                pageController.animateToPage(1,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.linear);
+                changePage(1);
               },
             ),
             NavigationBarItem(
@@ -57,9 +53,7 @@ class PrimaryNavigationBar extends StatelessWidget {
               title: "Exams",
               onClick: () {
                 context.read<PrimaryCubit>().setCurrentPageIndex(2);
-                pageController.animateToPage(2,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.linear);
+                changePage(2);
               },
             ),
             NavigationBarItem(
@@ -69,9 +63,7 @@ class PrimaryNavigationBar extends StatelessWidget {
               title: "Wishlist",
               onClick: () {
                 context.read<PrimaryCubit>().setCurrentPageIndex(3);
-                pageController.animateToPage(3,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.linear);
+                changePage(3);
               },
             ),
             NavigationBarItem(
@@ -81,14 +73,16 @@ class PrimaryNavigationBar extends StatelessWidget {
               title: "Account",
               onClick: () {
                 context.read<PrimaryCubit>().setCurrentPageIndex(4);
-                pageController.animateToPage(4,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.linear);
+                changePage(4);
               },
             ),
           ],
         ),
       );
     });
+  }
+
+  void changePage(int index){
+    pageController.jumpToPage(index);
   }
 }
