@@ -11,6 +11,7 @@ import '../../business_logic/home/home_cubit.dart';
 import '../../business_logic/home/home_state.dart';
 import '../../utils/enums/api_request_status.dart';
 import '../components/general/app_refresh_indicator.dart';
+import '../components/home/inprogress_course_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -42,16 +43,24 @@ class HomePage extends StatelessWidget {
               onRefreshFunction: () {
                 context.read<HomeCubit>().getDataForHome();
               },
-              child: ListView(
-                shrinkWrap: false,
-                padding: const EdgeInsets.all(0),
-                children: const [
-                  RecommendedListContent(),
-                  CategoriesListContent(),
-                  TopCoursesListContent(),
-                  PopularCoursesListContent()
-                ],
-              ),
+              child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                ListView(
+                  shrinkWrap: false,
+                  padding: const EdgeInsets.all(0),
+                  children: const [
+                    RecommendedListContent(),
+                    CategoriesListContent(),
+                    TopCoursesListContent(),
+                    PopularCoursesListContent()
+                  ],
+                ),
+                state.homeData?.inProgressCourse != null
+                    ? InProgressCourseCard(
+                        courseEntity: state.homeData!.inProgressCourse!)
+                    : Container()
+              ]),
             ),
           );
         },

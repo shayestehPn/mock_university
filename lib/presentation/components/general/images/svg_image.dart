@@ -59,4 +59,7 @@ class SvgImage {
   static final Widget unsavedBlackIcon = SvgPicture.asset(
       "${svgImagesLocation}unsaved.svg",
       color: black);
+
+  static final Widget trashcanIcon = SvgPicture.asset(
+      "${svgImagesLocation}trashcan.svg");
 }
