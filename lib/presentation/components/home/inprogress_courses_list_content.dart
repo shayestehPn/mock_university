@@ -20,6 +20,7 @@ class InProgressCoursesListContent extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 83.h),
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.none,   ///not to hide the shadow of cards
             itemCount: (state.homeData!.inProgressCoursesList??[]).length,
             padding: EdgeInsets.only(left: 30.w),
             itemBuilder: (context, index) => InProgressCourseCard(
