@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,8 +15,8 @@ class RecommendedListContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(buildWhen: (pState, nState) {
-      return pState.homeData?.recommendedList ==
-          nState.homeData?.recommendedList;
+      return listEquals(pState.homeData?.recommendedList,
+          nState.homeData?.recommendedList);
     }, builder: (context, state) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
