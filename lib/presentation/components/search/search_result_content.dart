@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mock_university/business_logic/search/search_state.dart';
+import 'package:mock_university/presentation/components/home/course_card.dart';
+
+import '../../../business_logic/search/search_cubit.dart';
+
+class SearchResultContent extends StatelessWidget {
+  const SearchResultContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<SearchCubit, SearchState>(builder: (context, state) {
+      return GridView.builder(
+          shrinkWrap: true,
+          padding: EdgeInsets.only(top: 16.h,bottom: 100.h),
+          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            mainAxisSpacing: 16.h
+          ),
+          physics: const ScrollPhysics(),
+          itemCount: state.searchResult.length,
+          itemBuilder: (BuildContext context, int index) {
+            return CourseCard(
+              courseEntity: state.searchResult[index],
+              saveOnCLick: () {},
+            );
+          });
+    });
+  }
+}

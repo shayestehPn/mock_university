@@ -43,7 +43,7 @@ const Color green = Color(0xff63B450);
 Color black = Colors.black;
 Color white = Colors.white;
 const Color primary = Color(0xff63B450);
-const Color textFieldCursorColor = secondary;
+const Color textFieldCursorColor = mainColor;
 
 const Color natural2 = Color.fromRGBO(72, 70, 73, 1);
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mock_university/presentation/pages/home_page.dart';
+import 'package:mock_university/presentation/pages/search_page.dart';
 import 'package:mock_university/presentation/pages/wishes_page.dart';
 import 'package:mock_university/utils/ui/colors.dart';
 
@@ -14,7 +15,7 @@ class PrimaryPage extends StatelessWidget {
   final PageController pageController = PageController();
 
   List pageViewItems = [
-    const HomePage(),const WishesPage(),
+    const HomePage(), SearchPage(),
     const HomePage(),const WishesPage(),
     const AccountPage()
 

@@ -6,6 +6,7 @@ part "search_data.freezed.dart";
 
 @freezed
 class SearchData with _$SearchData {
-  factory SearchData({required List<CourseEntity> allCoursesList}) =
-      _SearchData;
+  factory SearchData(
+      {required List<CourseEntity> allCoursesList,
+      required List<String> topSearchesList}) = _SearchData;
 }

@@ -20,6 +20,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   SearchData? get searchData => throw _privateConstructorUsedError;
   ErrorEntity? get errorObject => throw _privateConstructorUsedError;
+  List<CourseEntity> get searchResult => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchStateCopyWith<SearchState> get copyWith =>
@@ -35,7 +36,8 @@ abstract class $SearchStateCopyWith<$Res> {
   $Res call(
       {ApiRequestStatus getCoursesListStatus,
       SearchData? searchData,
-      ErrorEntity? errorObject});
+      ErrorEntity? errorObject,
+      List<CourseEntity> searchResult});
 
   $SearchDataCopyWith<$Res>? get searchData;
   $ErrorEntityCopyWith<$Res>? get errorObject;
@@ -57,6 +59,7 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
     Object? getCoursesListStatus = null,
     Object? searchData = freezed,
     Object? errorObject = freezed,
+    Object? searchResult = null,
   }) {
     return _then(_value.copyWith(
       getCoursesListStatus: null == getCoursesListStatus
@@ -71,6 +74,10 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
           ? _value.errorObject
           : errorObject // ignore: cast_nullable_to_non_nullable
               as ErrorEntity?,
+      searchResult: null == searchResult
+          ? _value.searchResult
+          : searchResult // ignore: cast_nullable_to_non_nullable
+              as List<CourseEntity>,
     ) as $Val);
   }
 
@@ -110,7 +117,8 @@ abstract class _$$SearchStateImplCopyWith<$Res>
   $Res call(
       {ApiRequestStatus getCoursesListStatus,
       SearchData? searchData,
-      ErrorEntity? errorObject});
+      ErrorEntity? errorObject,
+      List<CourseEntity> searchResult});
 
   @override
   $SearchDataCopyWith<$Res>? get searchData;
@@ -132,6 +140,7 @@ class __$$SearchStateImplCopyWithImpl<$Res>
     Object? getCoursesListStatus = null,
     Object? searchData = freezed,
     Object? errorObject = freezed,
+    Object? searchResult = null,
   }) {
     return _then(_$SearchStateImpl(
       getCoursesListStatus: null == getCoursesListStatus
@@ -146,15 +155,24 @@ class __$$SearchStateImplCopyWithImpl<$Res>
           ? _value.errorObject
           : errorObject // ignore: cast_nullable_to_non_nullable
               as ErrorEntity?,
+      searchResult: null == searchResult
+          ? _value._searchResult
+          : searchResult // ignore: cast_nullable_to_non_nullable
+              as List<CourseEntity>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SearchStateImpl implements _SearchState {
-  _$SearchStateImpl(
-      {required this.getCoursesListStatus, this.searchData, this.errorObject});
+class _$SearchStateImpl extends _SearchState {
+  const _$SearchStateImpl(
+      {required this.getCoursesListStatus,
+      this.searchData,
+      this.errorObject,
+      final List<CourseEntity> searchResult = const []})
+      : _searchResult = searchResult,
+        super._();
 
   @override
   final ApiRequestStatus getCoursesListStatus;
@@ -162,10 +180,18 @@ class _$SearchStateImpl implements _SearchState {
   final SearchData? searchData;
   @override
   final ErrorEntity? errorObject;
+  final List<CourseEntity> _searchResult;
+  @override
+  @JsonKey()
+  List<CourseEntity> get searchResult {
+    if (_searchResult is EqualUnmodifiableListView) return _searchResult;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_searchResult);
+  }
 
   @override
   String toString() {
-    return 'SearchState(getCoursesListStatus: $getCoursesListStatus, searchData: $searchData, errorObject: $errorObject)';
+    return 'SearchState(getCoursesListStatus: $getCoursesListStatus, searchData: $searchData, errorObject: $errorObject, searchResult: $searchResult)';
   }
 
   @override
@@ -178,12 +204,14 @@ class _$SearchStateImpl implements _SearchState {
             (identical(other.searchData, searchData) ||
                 other.searchData == searchData) &&
             (identical(other.errorObject, errorObject) ||
-                other.errorObject == errorObject));
+                other.errorObject == errorObject) &&
+            const DeepCollectionEquality()
+                .equals(other._searchResult, _searchResult));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, getCoursesListStatus, searchData, errorObject);
+  int get hashCode => Object.hash(runtimeType, getCoursesListStatus, searchData,
+      errorObject, const DeepCollectionEquality().hash(_searchResult));
 
   @JsonKey(ignore: true)
   @override
@@ -192,11 +220,13 @@ class _$SearchStateImpl implements _SearchState {
       __$$SearchStateImplCopyWithImpl<_$SearchStateImpl>(this, _$identity);
 }
 
-abstract class _SearchState implements SearchState {
-  factory _SearchState(
+abstract class _SearchState extends SearchState {
+  const factory _SearchState(
       {required final ApiRequestStatus getCoursesListStatus,
       final SearchData? searchData,
-      final ErrorEntity? errorObject}) = _$SearchStateImpl;
+      final ErrorEntity? errorObject,
+      final List<CourseEntity> searchResult}) = _$SearchStateImpl;
+  const _SearchState._() : super._();
 
   @override
   ApiRequestStatus get getCoursesListStatus;
@@ -204,6 +234,8 @@ abstract class _SearchState implements SearchState {
   SearchData? get searchData;
   @override
   ErrorEntity? get errorObject;
+  @override
+  List<CourseEntity> get searchResult;
   @override
   @JsonKey(ignore: true)
   _$$SearchStateImplCopyWith<_$SearchStateImpl> get copyWith =>

@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SearchData {
   List<CourseEntity> get allCoursesList => throw _privateConstructorUsedError;
+  List<String> get topSearchesList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchDataCopyWith<SearchData> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $SearchDataCopyWith<$Res> {
           SearchData value, $Res Function(SearchData) then) =
       _$SearchDataCopyWithImpl<$Res, SearchData>;
   @useResult
-  $Res call({List<CourseEntity> allCoursesList});
+  $Res call({List<CourseEntity> allCoursesList, List<String> topSearchesList});
 }
 
 /// @nodoc
@@ -46,12 +47,17 @@ class _$SearchDataCopyWithImpl<$Res, $Val extends SearchData>
   @override
   $Res call({
     Object? allCoursesList = null,
+    Object? topSearchesList = null,
   }) {
     return _then(_value.copyWith(
       allCoursesList: null == allCoursesList
           ? _value.allCoursesList
           : allCoursesList // ignore: cast_nullable_to_non_nullable
               as List<CourseEntity>,
+      topSearchesList: null == topSearchesList
+          ? _value.topSearchesList
+          : topSearchesList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -64,7 +70,7 @@ abstract class _$$SearchDataImplCopyWith<$Res>
       __$$SearchDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<CourseEntity> allCoursesList});
+  $Res call({List<CourseEntity> allCoursesList, List<String> topSearchesList});
 }
 
 /// @nodoc
@@ -79,12 +85,17 @@ class __$$SearchDataImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? allCoursesList = null,
+    Object? topSearchesList = null,
   }) {
     return _then(_$SearchDataImpl(
       allCoursesList: null == allCoursesList
           ? _value._allCoursesList
           : allCoursesList // ignore: cast_nullable_to_non_nullable
               as List<CourseEntity>,
+      topSearchesList: null == topSearchesList
+          ? _value._topSearchesList
+          : topSearchesList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -92,8 +103,11 @@ class __$$SearchDataImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchDataImpl implements _SearchData {
-  _$SearchDataImpl({required final List<CourseEntity> allCoursesList})
-      : _allCoursesList = allCoursesList;
+  _$SearchDataImpl(
+      {required final List<CourseEntity> allCoursesList,
+      required final List<String> topSearchesList})
+      : _allCoursesList = allCoursesList,
+        _topSearchesList = topSearchesList;
 
   final List<CourseEntity> _allCoursesList;
   @override
@@ -103,9 +117,17 @@ class _$SearchDataImpl implements _SearchData {
     return EqualUnmodifiableListView(_allCoursesList);
   }
 
+  final List<String> _topSearchesList;
+  @override
+  List<String> get topSearchesList {
+    if (_topSearchesList is EqualUnmodifiableListView) return _topSearchesList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_topSearchesList);
+  }
+
   @override
   String toString() {
-    return 'SearchData(allCoursesList: $allCoursesList)';
+    return 'SearchData(allCoursesList: $allCoursesList, topSearchesList: $topSearchesList)';
   }
 
   @override
@@ -114,12 +136,16 @@ class _$SearchDataImpl implements _SearchData {
         (other.runtimeType == runtimeType &&
             other is _$SearchDataImpl &&
             const DeepCollectionEquality()
-                .equals(other._allCoursesList, _allCoursesList));
+                .equals(other._allCoursesList, _allCoursesList) &&
+            const DeepCollectionEquality()
+                .equals(other._topSearchesList, _topSearchesList));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_allCoursesList));
+      runtimeType,
+      const DeepCollectionEquality().hash(_allCoursesList),
+      const DeepCollectionEquality().hash(_topSearchesList));
 
   @JsonKey(ignore: true)
   @override
@@ -129,11 +155,14 @@ class _$SearchDataImpl implements _SearchData {
 }
 
 abstract class _SearchData implements SearchData {
-  factory _SearchData({required final List<CourseEntity> allCoursesList}) =
-      _$SearchDataImpl;
+  factory _SearchData(
+      {required final List<CourseEntity> allCoursesList,
+      required final List<String> topSearchesList}) = _$SearchDataImpl;
 
   @override
   List<CourseEntity> get allCoursesList;
+  @override
+  List<String> get topSearchesList;
   @override
   @JsonKey(ignore: true)
   _$$SearchDataImplCopyWith<_$SearchDataImpl> get copyWith =>

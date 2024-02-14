@@ -65,4 +65,7 @@ class SvgImage {
 
   static final Widget  editIcon = SvgPicture.asset(
       "${svgImagesLocation}edit.svg");
+
+  static final Widget  voiceIcon = SvgPicture.asset(
+      "${svgImagesLocation}voice.svg");
 }

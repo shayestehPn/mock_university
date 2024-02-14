@@ -7,14 +7,14 @@ import 'colors.dart';
 double strokeWidthOfRefreshIndicator = 2.w;
 
 final validTextFieldBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(8),
+    borderRadius: BorderRadius.circular(12),
     borderSide: BorderSide(
       color: gray7,
       width: 1.w,
     ));
 
 final errorTextFieldBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(8),
+    borderRadius: BorderRadius.circular(12),
     borderSide: BorderSide(
       color: error,
       width: 1.w,
@@ -30,5 +30,4 @@ final BoxShadow cardBoxShadow = BoxShadow(
   color: Colors.grey.withOpacity(0.5),
   spreadRadius: 1,
   blurRadius: 4,
-  offset: const Offset(0, 3),
 );
