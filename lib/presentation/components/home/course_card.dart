@@ -34,7 +34,8 @@ class CourseCard extends StatelessWidget {
                 color: white),
             child: CustomCachedNetworkImage(
               imageUrl: courseEntity.imageUrl,
-              height: 80.h,
+              height: 80.r,
+              width: 80.r,
             ),
           ),
           GestureDetector(

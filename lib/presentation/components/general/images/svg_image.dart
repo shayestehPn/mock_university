@@ -62,4 +62,7 @@ class SvgImage {
 
   static final Widget trashcanIcon = SvgPicture.asset(
       "${svgImagesLocation}trashcan.svg");
+
+  static final Widget  editIcon = SvgPicture.asset(
+      "${svgImagesLocation}edit.svg");
 }

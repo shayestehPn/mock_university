@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mock_university/presentation/components/home/categories_list_content.dart';
-import 'package:mock_university/presentation/components/home/home_app_bar.dart';
+import 'package:mock_university/presentation/components/general/mock_university_app_bar.dart';
 import 'package:mock_university/presentation/components/home/inprogress_courses_list_content.dart';
 import 'package:mock_university/presentation/components/home/popular_courses_list_content.dart';
 import 'package:mock_university/presentation/components/home/recommended_list_content.dart';
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
           return Scaffold(
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(85.h),
-              child: const HomeAppBar(),
+              child:  const MockUniversityAppBar(alignment: Alignment.topLeft),
             ),
             body: AppRefreshIndicator(
               onRefreshFunction: () {

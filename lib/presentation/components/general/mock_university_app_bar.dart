@@ -3,14 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/ui/colors.dart';
 
-class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({super.key});
+class MockUniversityAppBar extends StatelessWidget {
+  const MockUniversityAppBar({super.key, required this.alignment});
+
+  final Alignment alignment;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        alignment: Alignment.topLeft,
-        padding: EdgeInsets.only(top: 44.h, left: 30.w),
+        alignment: alignment,
+        padding: EdgeInsets.only(top: 19.h, left: 30.w),
         decoration: const BoxDecoration(color: backGroundColor),
         child: RichText(
           text: TextSpan(

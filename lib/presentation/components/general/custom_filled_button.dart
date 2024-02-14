@@ -38,7 +38,7 @@ class CustomFilledButton extends StatelessWidget {
                 : Text(title,
                     textAlign: TextAlign.center,
                     style:
-                        textTheme.titleMedium?.copyWith(color: Colors.white))),
+                        textTheme.titleMedium?.copyWith(color: const Color(0xffF9F9F9)))),
         onTap: () {
           onClick();
         });

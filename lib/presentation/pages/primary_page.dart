@@ -6,6 +6,7 @@ import 'package:mock_university/utils/ui/colors.dart';
 
 import '../../business_logic/primary/primary_cubit.dart';
 import '../components/primary/primary_navigation_bar.dart';
+import 'account_page.dart';
 
 class PrimaryPage extends StatelessWidget {
   PrimaryPage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class PrimaryPage extends StatelessWidget {
   List pageViewItems = [
     const HomePage(),const WishesPage(),
     const HomePage(),const WishesPage(),
-    const HomePage()
+    const AccountPage()
 
   ];
 

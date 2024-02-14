@@ -21,6 +21,7 @@ mixin _$UserEntity {
   String get address => throw _privateConstructorUsedError;
   String get mobilePhoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserEntityCopyWith<UserEntity> get copyWith =>
@@ -38,7 +39,8 @@ abstract class $UserEntityCopyWith<$Res> {
       String educationLevel,
       String address,
       String mobilePhoneNumber,
-      String email});
+      String email,
+      String imageUrl});
 }
 
 /// @nodoc
@@ -59,6 +61,7 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
     Object? address = null,
     Object? mobilePhoneNumber = null,
     Object? email = null,
+    Object? imageUrl = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -81,6 +84,10 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -98,7 +105,8 @@ abstract class _$$UserEntityImplCopyWith<$Res>
       String educationLevel,
       String address,
       String mobilePhoneNumber,
-      String email});
+      String email,
+      String imageUrl});
 }
 
 /// @nodoc
@@ -117,6 +125,7 @@ class __$$UserEntityImplCopyWithImpl<$Res>
     Object? address = null,
     Object? mobilePhoneNumber = null,
     Object? email = null,
+    Object? imageUrl = null,
   }) {
     return _then(_$UserEntityImpl(
       name: null == name
@@ -139,6 +148,10 @@ class __$$UserEntityImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -151,7 +164,8 @@ class _$UserEntityImpl implements _UserEntity {
       required this.educationLevel,
       required this.address,
       required this.mobilePhoneNumber,
-      required this.email});
+      required this.email,
+      required this.imageUrl});
 
   @override
   final String name;
@@ -163,10 +177,12 @@ class _$UserEntityImpl implements _UserEntity {
   final String mobilePhoneNumber;
   @override
   final String email;
+  @override
+  final String imageUrl;
 
   @override
   String toString() {
-    return 'UserEntity(name: $name, educationLevel: $educationLevel, address: $address, mobilePhoneNumber: $mobilePhoneNumber, email: $email)';
+    return 'UserEntity(name: $name, educationLevel: $educationLevel, address: $address, mobilePhoneNumber: $mobilePhoneNumber, email: $email, imageUrl: $imageUrl)';
   }
 
   @override
@@ -180,12 +196,14 @@ class _$UserEntityImpl implements _UserEntity {
             (identical(other.address, address) || other.address == address) &&
             (identical(other.mobilePhoneNumber, mobilePhoneNumber) ||
                 other.mobilePhoneNumber == mobilePhoneNumber) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, name, educationLevel, address, mobilePhoneNumber, email);
+  int get hashCode => Object.hash(runtimeType, name, educationLevel, address,
+      mobilePhoneNumber, email, imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -200,7 +218,8 @@ abstract class _UserEntity implements UserEntity {
       required final String educationLevel,
       required final String address,
       required final String mobilePhoneNumber,
-      required final String email}) = _$UserEntityImpl;
+      required final String email,
+      required final String imageUrl}) = _$UserEntityImpl;
 
   @override
   String get name;
@@ -212,6 +231,8 @@ abstract class _UserEntity implements UserEntity {
   String get mobilePhoneNumber;
   @override
   String get email;
+  @override
+  String get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$UserEntityImplCopyWith<_$UserEntityImpl> get copyWith =>

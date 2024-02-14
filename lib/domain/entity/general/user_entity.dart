@@ -10,5 +10,6 @@ class UserEntity with _$UserEntity {
     required String address,
     required String mobilePhoneNumber,
     required String email,
+    required String imageUrl,
   }) = _UserEntity;
 }
