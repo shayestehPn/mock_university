@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mock_university/business_logic/wishes/wishes_cubit.dart';
 import 'package:mock_university/presentation/components/wishes/wish_card.dart';
 import 'package:mock_university/presentation/components/wishes/wishes_list_content.dart';
+import 'package:mock_university/utils/ui/colors.dart';
 import '../../business_logic/wishes/wishes_state.dart';
 import '../../utils/enums/api_request_status.dart';
 import '../components/general/app_refresh_indicator.dart';
@@ -31,6 +32,7 @@ class WishesPage extends StatelessWidget {
             return Container();
           }
           return Scaffold(
+            backgroundColor: backGroundColor,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(63.h),
               child: const WishesAppBar(),

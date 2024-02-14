@@ -21,7 +21,7 @@ class CourseCard extends StatelessWidget {
       height: 171.h,
       margin: EdgeInsets.only(right: 17.w),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14), color: backGroundColor),
+          borderRadius: BorderRadius.circular(14), color: const Color(0xffFFFFFF)),
       child: Column(
         children: [
           Container(

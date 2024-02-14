@@ -7,6 +7,7 @@ import 'package:mock_university/presentation/components/home/inprogress_courses_
 import 'package:mock_university/presentation/components/home/popular_courses_list_content.dart';
 import 'package:mock_university/presentation/components/home/recommended_list_content.dart';
 import 'package:mock_university/presentation/components/home/top_courses_list_content.dart';
+import 'package:mock_university/utils/ui/colors.dart';
 
 import '../../business_logic/home/home_cubit.dart';
 import '../../business_logic/home/home_state.dart';
@@ -35,6 +36,7 @@ class HomePage extends StatelessWidget {
             return Container();
           }
           return Scaffold(
+            backgroundColor: backGroundColor,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(85.h),
               child:  const MockUniversityAppBar(alignment: Alignment.topLeft),
