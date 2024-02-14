@@ -10,20 +10,20 @@ import '../../utils/error_handling/exception_to_error_object.dart';
 class WishesCubit extends Cubit<WishesState> {
   WishesCubit()
       : _homeRepository = Get.find<HomeRepository>(),
-        super(WishesState(getWishList: ApiRequestStatus.initial));
+        super(WishesState(getWishListStatus: ApiRequestStatus.initial));
 
   final HomeRepository _homeRepository;
 
   void getWishesList() async {
-    emit(state.copyWith(getWishList: ApiRequestStatus.loading));
+    emit(state.copyWith(getWishListStatus: ApiRequestStatus.loading));
     try {
       var response = await _homeRepository.getWishes();
 
       emit(state.copyWith(
-          getWishList: ApiRequestStatus.success, wishesData: response));
+          getWishListStatus: ApiRequestStatus.success, wishesData: response));
     } on Exception catch (e) {
       emit(state.copyWith(
-          getWishList: ApiRequestStatus.failure,
+          getWishListStatus: ApiRequestStatus.failure,
           errorObject: exceptionToErrorObject(e)));
     }
   }

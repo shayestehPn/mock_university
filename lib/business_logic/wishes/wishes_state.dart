@@ -10,7 +10,7 @@ part 'wishes_state.freezed.dart';
 @freezed
 class WishesState with _$WishesState {
   factory WishesState({
-    required ApiRequestStatus getWishList,
+    required ApiRequestStatus getWishListStatus,
     WishesData? wishesData,
     ErrorEntity? errorObject,
   }) = _WishesState;

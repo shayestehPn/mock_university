@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WishesState {
-  ApiRequestStatus get getWishList => throw _privateConstructorUsedError;
+  ApiRequestStatus get getWishListStatus => throw _privateConstructorUsedError;
   WishesData? get wishesData => throw _privateConstructorUsedError;
   ErrorEntity? get errorObject => throw _privateConstructorUsedError;
 
@@ -32,7 +32,7 @@ abstract class $WishesStateCopyWith<$Res> {
       _$WishesStateCopyWithImpl<$Res, WishesState>;
   @useResult
   $Res call(
-      {ApiRequestStatus getWishList,
+      {ApiRequestStatus getWishListStatus,
       WishesData? wishesData,
       ErrorEntity? errorObject});
 
@@ -53,14 +53,14 @@ class _$WishesStateCopyWithImpl<$Res, $Val extends WishesState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getWishList = null,
+    Object? getWishListStatus = null,
     Object? wishesData = freezed,
     Object? errorObject = freezed,
   }) {
     return _then(_value.copyWith(
-      getWishList: null == getWishList
-          ? _value.getWishList
-          : getWishList // ignore: cast_nullable_to_non_nullable
+      getWishListStatus: null == getWishListStatus
+          ? _value.getWishListStatus
+          : getWishListStatus // ignore: cast_nullable_to_non_nullable
               as ApiRequestStatus,
       wishesData: freezed == wishesData
           ? _value.wishesData
@@ -107,7 +107,7 @@ abstract class _$$WishesStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ApiRequestStatus getWishList,
+      {ApiRequestStatus getWishListStatus,
       WishesData? wishesData,
       ErrorEntity? errorObject});
 
@@ -128,14 +128,14 @@ class __$$WishesStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getWishList = null,
+    Object? getWishListStatus = null,
     Object? wishesData = freezed,
     Object? errorObject = freezed,
   }) {
     return _then(_$WishesStateImpl(
-      getWishList: null == getWishList
-          ? _value.getWishList
-          : getWishList // ignore: cast_nullable_to_non_nullable
+      getWishListStatus: null == getWishListStatus
+          ? _value.getWishListStatus
+          : getWishListStatus // ignore: cast_nullable_to_non_nullable
               as ApiRequestStatus,
       wishesData: freezed == wishesData
           ? _value.wishesData
@@ -153,10 +153,10 @@ class __$$WishesStateImplCopyWithImpl<$Res>
 
 class _$WishesStateImpl implements _WishesState {
   _$WishesStateImpl(
-      {required this.getWishList, this.wishesData, this.errorObject});
+      {required this.getWishListStatus, this.wishesData, this.errorObject});
 
   @override
-  final ApiRequestStatus getWishList;
+  final ApiRequestStatus getWishListStatus;
   @override
   final WishesData? wishesData;
   @override
@@ -164,7 +164,7 @@ class _$WishesStateImpl implements _WishesState {
 
   @override
   String toString() {
-    return 'WishesState(getWishList: $getWishList, wishesData: $wishesData, errorObject: $errorObject)';
+    return 'WishesState(getWishListStatus: $getWishListStatus, wishesData: $wishesData, errorObject: $errorObject)';
   }
 
   @override
@@ -172,8 +172,8 @@ class _$WishesStateImpl implements _WishesState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WishesStateImpl &&
-            (identical(other.getWishList, getWishList) ||
-                other.getWishList == getWishList) &&
+            (identical(other.getWishListStatus, getWishListStatus) ||
+                other.getWishListStatus == getWishListStatus) &&
             (identical(other.wishesData, wishesData) ||
                 other.wishesData == wishesData) &&
             (identical(other.errorObject, errorObject) ||
@@ -182,7 +182,7 @@ class _$WishesStateImpl implements _WishesState {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, getWishList, wishesData, errorObject);
+      Object.hash(runtimeType, getWishListStatus, wishesData, errorObject);
 
   @JsonKey(ignore: true)
   @override
@@ -193,12 +193,12 @@ class _$WishesStateImpl implements _WishesState {
 
 abstract class _WishesState implements WishesState {
   factory _WishesState(
-      {required final ApiRequestStatus getWishList,
+      {required final ApiRequestStatus getWishListStatus,
       final WishesData? wishesData,
       final ErrorEntity? errorObject}) = _$WishesStateImpl;
 
   @override
-  ApiRequestStatus get getWishList;
+  ApiRequestStatus get getWishListStatus;
   @override
   WishesData? get wishesData;
   @override

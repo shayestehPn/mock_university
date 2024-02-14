@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mock_university/business_logic/wishes/wishes_cubit.dart';
 import 'package:mock_university/presentation/components/wishes/wish_card.dart';
 import 'package:mock_university/presentation/components/wishes/wishes_list_content.dart';
+import '../../business_logic/account/account_cubit.dart';
+import '../../business_logic/account/account_state.dart';
 import '../../business_logic/wishes/wishes_state.dart';
 import '../../utils/enums/api_request_status.dart';
 import '../components/general/app_refresh_indicator.dart';
@@ -14,20 +16,20 @@ class WishesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<WishesCubit>(
+    return BlocProvider<AccountCubit>(
       create: (context) {
-        final cubit = WishesCubit();
-        cubit.getWishesList();
+        final cubit = AccountCubit();
+        cubit.getUserData();
         return cubit;
       },
-      child: BlocBuilder<WishesCubit, WishesState>(
+      child: BlocBuilder<AccountCubit, AccountState>(
         buildWhen: (pState, nState) {
-          return pState.getWishListStatus != nState.getWishListStatus;
+          return pState.getUserDataStatus != nState.getUserDataStatus;
         },
         builder: (context, state) {
-          if (state.getWishListStatus == ApiRequestStatus.loading ||
-              state.getWishListStatus == ApiRequestStatus.initial ||
-              state.getWishListStatus == ApiRequestStatus.failure) {
+          if (state.getUserDataStatus == ApiRequestStatus.loading ||
+              state.getUserDataStatus == ApiRequestStatus.initial ||
+              state.getUserDataStatus == ApiRequestStatus.failure) {
             return Container();
           }
           return Scaffold(
@@ -36,10 +38,15 @@ class WishesPage extends StatelessWidget {
               child: const WishesAppBar(),
             ),
             body: AppRefreshIndicator(
-              onRefreshFunction: () {
-                context.read<WishesCubit>().getWishesList();
-              },
-              child: const WishesListContent()
+                onRefreshFunction: () {
+                  context.read<WishesCubit>().getWishesList();
+                },
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+
+                  ],
+                )
             ),
           );
         },
