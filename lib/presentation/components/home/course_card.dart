@@ -40,33 +40,35 @@ class CourseCard extends StatelessWidget {
               width: 80.r,
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              saveOnCLick();
-            },
-            child: Container(
-              margin: EdgeInsets.fromLTRB(14.w, 7.w, 14.w, 0),
-              color: Colors.transparent,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(courseEntity.name,
-                          style: context.appTextTheme.titleSmall),
-                      Text(courseEntity.totalTime.getTimeText(),
-                          style: context.appTextTheme.titleSmall?.copyWith(
-                              color: const Color(0xff000000).withOpacity(0.3),
-                              fontSize: 10.sp))
-                    ],
-                  ),
-                  courseEntity.isSaved
-                      ? SvgImage.savedBlackIcon
-                      : SvgImage.unsavedBlackIcon
-                ],
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                saveOnCLick();
+              },
+              child: Container(
+                padding: EdgeInsets.fromLTRB(14.w, 7.w, 14.w, 0),
+                color: Colors.transparent,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(courseEntity.name,
+                            style: context.appTextTheme.titleSmall),
+                        Text(courseEntity.totalTime.getTimeText(),
+                            style: context.appTextTheme.titleSmall?.copyWith(
+                                color: const Color(0xff000000).withOpacity(0.3),
+                                fontSize: 10.sp))
+                      ],
+                    ),
+                    courseEntity.isSaved
+                        ? SvgImage.savedBlackIcon
+                        : SvgImage.unsavedBlackIcon
+                  ],
+                ),
               ),
             ),
           )
