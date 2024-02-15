@@ -29,7 +29,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void saveButtonClickedOnRecommendedCourse(int index){
-    List<CourseEntity> coursesList=state.homeData!.recommendedList;
+    List<CourseEntity> coursesList=List.from(state.homeData!.recommendedList);
     CourseEntity course=coursesList[index];
     CourseEntity newCourse =coursesList[index].copyWith(
       isSaved: !course.isSaved
@@ -43,7 +43,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void saveButtonClickedOnTopCourse(int index){
-    List<CourseEntity> coursesList=state.homeData!.topCoursesList;
+    List<CourseEntity> coursesList=List.from(state.homeData!.topCoursesList);
     CourseEntity course=coursesList[index];
     CourseEntity newCourse =coursesList[index].copyWith(
         isSaved: !course.isSaved
@@ -57,7 +57,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void saveButtonClickedOnPopularCourse(int index){
-    List<CourseEntity> coursesList=state.homeData!.popularCoursesList;
+    List<CourseEntity> coursesList=List.from(state.homeData!.popularCoursesList);
     CourseEntity course=coursesList[index];
     CourseEntity newCourse =coursesList[index].copyWith(
         isSaved: !course.isSaved
@@ -71,8 +71,8 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void removeInProgressCourse(int index){
-    List<CourseEntity>? coursesList=state.homeData!.inProgressCoursesList;
-    coursesList?.removeAt(index);
+    final List<CourseEntity> coursesList = List.from(state.homeData!.inProgressCoursesList!);
+    coursesList.removeAt(index);
     emit(state.copyWith(
         homeData: state.homeData?.copyWith(
             inProgressCoursesList: coursesList

@@ -13,8 +13,8 @@ class WishesListContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<WishesCubit, WishesState>(
         buildWhen: (pState, nState) {
-      return listEquals(pState.wishesData?.wishesList,
-          nState.wishesData?.wishesList);
+      return pState.wishesData?.wishesList!=
+          nState.wishesData?.wishesList;
     }, builder: (context, state) {
       return ListView.builder(
           scrollDirection: Axis.vertical,

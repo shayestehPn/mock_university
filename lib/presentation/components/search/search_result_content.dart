@@ -13,6 +13,10 @@ class SearchResultContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchCubit, SearchState>(
+        buildWhen: (pState, nState) {
+          return pState.searchResult !=
+              nState.searchResult;
+        },
         builder: (context, state) {
       return GridView.builder(
           shrinkWrap: true,

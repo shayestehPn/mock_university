@@ -16,6 +16,10 @@ class PopularCoursesListContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
+        buildWhen: (pState, nState) {
+          return pState.homeData!.popularCoursesList!=
+              nState.homeData!.popularCoursesList;
+        },
         builder: (context, state) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,

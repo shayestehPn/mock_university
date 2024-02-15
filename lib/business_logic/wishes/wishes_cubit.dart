@@ -29,7 +29,7 @@ class WishesCubit extends Cubit<WishesState> {
   }
 
   void removeWishCourse(int index){
-    List<CourseEntity> coursesList=state.wishesData!.wishesList;
+    List<CourseEntity> coursesList=List.from(state.wishesData!.wishesList);
     coursesList.removeAt(index);
     emit(state.copyWith(
         wishesData: state.wishesData?.copyWith(

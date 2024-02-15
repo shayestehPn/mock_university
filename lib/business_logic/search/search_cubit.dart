@@ -44,7 +44,7 @@ class SearchCubit extends Cubit<SearchState> {
   }
 
   void saveButtonClicked(int index){
-    List<CourseEntity> coursesList=state.searchResult;
+    List<CourseEntity> coursesList=List.from(state.searchResult);
     CourseEntity course=coursesList[index];
     CourseEntity newCourse =coursesList[index].copyWith(
         isSaved: !course.isSaved

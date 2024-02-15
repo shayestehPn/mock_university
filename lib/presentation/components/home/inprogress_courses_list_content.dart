@@ -12,8 +12,8 @@ class InProgressCoursesListContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(buildWhen: (pState, nState) {
-      return listEquals(pState.homeData?.inProgressCoursesList,
-          nState.homeData?.inProgressCoursesList);
+      return pState.homeData!.inProgressCoursesList!=
+      nState.homeData!.inProgressCoursesList!;
     }, builder: (context, state) {
       return Container(
         height: 111.h,
