@@ -41,6 +41,7 @@ class InProgressCourseCard extends StatelessWidget {
                 imageUrl: courseEntity.imageUrl,
                 height: 61.r,
                 width: 61.r,
+                borderRadius: BorderRadius.circular(8),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

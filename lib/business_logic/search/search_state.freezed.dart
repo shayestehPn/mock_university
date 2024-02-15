@@ -24,6 +24,8 @@ mixin _$SearchState {
   set searchData(SearchData? value) => throw _privateConstructorUsedError;
   ErrorEntity? get errorObject => throw _privateConstructorUsedError;
   set errorObject(ErrorEntity? value) => throw _privateConstructorUsedError;
+  bool get isListeningToVoice => throw _privateConstructorUsedError;
+  set isListeningToVoice(bool value) => throw _privateConstructorUsedError;
   List<CourseEntity> get searchResult => throw _privateConstructorUsedError;
   set searchResult(List<CourseEntity> value) =>
       throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ abstract class $SearchStateCopyWith<$Res> {
       {ApiRequestStatus getCoursesListStatus,
       SearchData? searchData,
       ErrorEntity? errorObject,
+      bool isListeningToVoice,
       List<CourseEntity> searchResult});
 
   $SearchDataCopyWith<$Res>? get searchData;
@@ -65,6 +68,7 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
     Object? getCoursesListStatus = null,
     Object? searchData = freezed,
     Object? errorObject = freezed,
+    Object? isListeningToVoice = null,
     Object? searchResult = null,
   }) {
     return _then(_value.copyWith(
@@ -80,6 +84,10 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
           ? _value.errorObject
           : errorObject // ignore: cast_nullable_to_non_nullable
               as ErrorEntity?,
+      isListeningToVoice: null == isListeningToVoice
+          ? _value.isListeningToVoice
+          : isListeningToVoice // ignore: cast_nullable_to_non_nullable
+              as bool,
       searchResult: null == searchResult
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
@@ -124,6 +132,7 @@ abstract class _$$SearchStateImplCopyWith<$Res>
       {ApiRequestStatus getCoursesListStatus,
       SearchData? searchData,
       ErrorEntity? errorObject,
+      bool isListeningToVoice,
       List<CourseEntity> searchResult});
 
   @override
@@ -146,6 +155,7 @@ class __$$SearchStateImplCopyWithImpl<$Res>
     Object? getCoursesListStatus = null,
     Object? searchData = freezed,
     Object? errorObject = freezed,
+    Object? isListeningToVoice = null,
     Object? searchResult = null,
   }) {
     return _then(_$SearchStateImpl(
@@ -161,6 +171,10 @@ class __$$SearchStateImplCopyWithImpl<$Res>
           ? _value.errorObject
           : errorObject // ignore: cast_nullable_to_non_nullable
               as ErrorEntity?,
+      isListeningToVoice: null == isListeningToVoice
+          ? _value.isListeningToVoice
+          : isListeningToVoice // ignore: cast_nullable_to_non_nullable
+              as bool,
       searchResult: null == searchResult
           ? _value.searchResult
           : searchResult // ignore: cast_nullable_to_non_nullable
@@ -176,6 +190,7 @@ class _$SearchStateImpl extends _SearchState {
       {required this.getCoursesListStatus,
       this.searchData,
       this.errorObject,
+      this.isListeningToVoice = false,
       this.searchResult = const []})
       : super._();
 
@@ -187,11 +202,14 @@ class _$SearchStateImpl extends _SearchState {
   ErrorEntity? errorObject;
   @override
   @JsonKey()
+  bool isListeningToVoice;
+  @override
+  @JsonKey()
   List<CourseEntity> searchResult;
 
   @override
   String toString() {
-    return 'SearchState(getCoursesListStatus: $getCoursesListStatus, searchData: $searchData, errorObject: $errorObject, searchResult: $searchResult)';
+    return 'SearchState(getCoursesListStatus: $getCoursesListStatus, searchData: $searchData, errorObject: $errorObject, isListeningToVoice: $isListeningToVoice, searchResult: $searchResult)';
   }
 
   @JsonKey(ignore: true)
@@ -206,6 +224,7 @@ abstract class _SearchState extends SearchState {
       {required ApiRequestStatus getCoursesListStatus,
       SearchData? searchData,
       ErrorEntity? errorObject,
+      bool isListeningToVoice,
       List<CourseEntity> searchResult}) = _$SearchStateImpl;
   _SearchState._() : super._();
 
@@ -218,6 +237,9 @@ abstract class _SearchState extends SearchState {
   @override
   ErrorEntity? get errorObject;
   set errorObject(ErrorEntity? value);
+  @override
+  bool get isListeningToVoice;
+  set isListeningToVoice(bool value);
   @override
   List<CourseEntity> get searchResult;
   set searchResult(List<CourseEntity> value);

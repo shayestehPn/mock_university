@@ -47,7 +47,9 @@ class AccountImageCard extends StatelessWidget {
                         width: 2.r
                     )
                 ),
-                child: SvgImage.editIcon
+                child: Container(
+                    child: SvgImage.editIcon
+                )
             ),
             onClick: (){
 

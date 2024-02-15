@@ -30,6 +30,7 @@ class CategoryCard extends StatelessWidget {
               imageUrl: categoryEntity.imageUrl,
               height: 32.r,
               width: 32.r,
+              borderRadius: BorderRadius.circular(8),
             ),
           ),
           Container(

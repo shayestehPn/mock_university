@@ -16,6 +16,7 @@ class SearchState with _$SearchState {
       {required ApiRequestStatus getCoursesListStatus,
         SearchData? searchData,
         ErrorEntity? errorObject,
+        @Default(false) bool isListeningToVoice,
         @Default([]) List<CourseEntity> searchResult
       }) = _SearchState;
 

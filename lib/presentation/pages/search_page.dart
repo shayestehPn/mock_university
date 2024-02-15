@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mock_university/presentation/components/general/app_sized_box.dart';
 import 'package:mock_university/presentation/components/general/mock_university_app_bar.dart';
 import 'package:mock_university/utils/extensions/context_extension.dart';
-import 'package:mock_university/utils/extensions/string_extension.dart';
 import 'package:mock_university/utils/ui/colors.dart';
 
 import '../../business_logic/search/search_cubit.dart';
@@ -47,9 +47,8 @@ class SearchPage extends StatelessWidget {
             body: ListView(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
               children: [
-                SearchTextField(controller: searchController,
-                  searchOnClick: () =>
-                  context.read<SearchCubit>().searchCourse(searchController.text.removeSpace())),
+                const HeightSizedBox(height: 30),
+                SearchTextField(controller: searchController),
                 Padding(
                   padding: EdgeInsets.only(top: 16.h, bottom: 13.h),
                   child: Text("Top Searches",

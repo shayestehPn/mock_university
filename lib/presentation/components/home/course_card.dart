@@ -38,6 +38,7 @@ class CourseCard extends StatelessWidget {
               imageUrl: courseEntity.imageUrl,
               height: 80.r,
               width: 80.r,
+              borderRadius: BorderRadius.circular(8),
             ),
           ),
           Expanded(

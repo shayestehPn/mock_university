@@ -34,6 +34,7 @@ class WishCard extends StatelessWidget {
             imageUrl: courseEntity.imageUrl,
             height: 61.r,
             width: 84.r,
+            borderRadius: BorderRadius.circular(8),
           ),
           const WidthSizedBox(width: 24),
           Expanded(
