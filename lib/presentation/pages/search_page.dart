@@ -20,6 +20,7 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    searchController.text="";
     return BlocProvider<SearchCubit>(
       create: (context) {
         final cubit = SearchCubit();

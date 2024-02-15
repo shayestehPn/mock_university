@@ -15,10 +15,8 @@ class PopularCoursesListContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeState>(buildWhen: (pState, nState) {
-      return listEquals(pState.homeData?.popularCoursesList,
-          nState.homeData?.popularCoursesList);
-    }, builder: (context, state) {
+    return BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,6 +34,7 @@ class PopularCoursesListContent extends StatelessWidget {
                 padding: EdgeInsets.only(left: 17.w),
                 itemBuilder: (context, index) => CourseCard(
                     courseEntity: state.homeData!.popularCoursesList[index],
+                    margin: EdgeInsets.only(right: 17.w),
                     saveOnCLick: () {
                       context
                           .read<HomeCubit>()

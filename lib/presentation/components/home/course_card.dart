@@ -9,9 +9,10 @@ import 'package:mock_university/utils/ui/colors.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard(
-      {super.key, required this.courseEntity, required this.saveOnCLick});
+      {super.key, required this.courseEntity, required this.saveOnCLick, required this.margin});
 
   final CourseEntity courseEntity;
+  final EdgeInsetsGeometry margin;
   final Function() saveOnCLick;
 
   @override
@@ -19,9 +20,10 @@ class CourseCard extends StatelessWidget {
     return Container(
       width: 169.w,
       height: 171.h,
-      margin: EdgeInsets.only(right: 17.w),
+      margin: margin,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14), color: const Color(0xffFFFFFF)),
+          borderRadius: BorderRadius.circular(14),
+          color: Colors.grey.shade50),
       child: Column(
         children: [
           Container(

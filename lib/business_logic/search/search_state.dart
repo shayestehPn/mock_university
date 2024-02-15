@@ -9,10 +9,10 @@ import '../../utils/error_handling/error_object.dart';
 part 'search_state.freezed.dart';
 
 
-@freezed
+@unfreezed
 class SearchState with _$SearchState {
-  const SearchState._();
-  const factory SearchState(
+   SearchState._();
+   factory SearchState(
       {required ApiRequestStatus getCoursesListStatus,
         SearchData? searchData,
         ErrorEntity? errorObject,

@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,10 +13,8 @@ class TopCoursesListContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeState>(buildWhen: (pState, nState) {
-      return listEquals(pState.homeData?.topCoursesList,
-          nState.homeData?.topCoursesList);
-    }, builder: (context, state) {
+    return BlocBuilder<HomeCubit, HomeState>(
+    builder: (context, state) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,6 +33,7 @@ class TopCoursesListContent extends StatelessWidget {
                 itemBuilder: (context, index) => CourseCard(
                     courseEntity:
                     state.homeData!.topCoursesList[index],
+                    margin: EdgeInsets.only(right: 17.w),
                     saveOnCLick: (){
                       context.read<HomeCubit>().saveButtonClickedOnTopCourse(index);
                     }

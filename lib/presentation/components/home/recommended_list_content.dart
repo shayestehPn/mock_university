@@ -14,10 +14,8 @@ class RecommendedListContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeState>(buildWhen: (pState, nState) {
-      return listEquals(pState.homeData?.recommendedList,
-          nState.homeData?.recommendedList);
-    }, builder: (context, state) {
+    return BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,6 +33,7 @@ class RecommendedListContent extends StatelessWidget {
                 padding: EdgeInsets.only(left: 17.w),
                 itemBuilder: (context, index) => CourseCard(
                     courseEntity: state.homeData!.recommendedList[index],
+                    margin: EdgeInsets.only(right: 17.w),
                     saveOnCLick: () {
                       context
                           .read<HomeCubit>()
