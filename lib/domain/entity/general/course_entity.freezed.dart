@@ -24,6 +24,8 @@ mixin _$CourseEntity {
   TimeEntity? get remainingTime => throw _privateConstructorUsedError;
   int get totalNumberOfQuestions => throw _privateConstructorUsedError;
   int? get numberOfAnsweredQuestions => throw _privateConstructorUsedError;
+  int? get score => throw _privateConstructorUsedError;
+  String? get completingDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CourseEntityCopyWith<CourseEntity> get copyWith =>
@@ -44,7 +46,9 @@ abstract class $CourseEntityCopyWith<$Res> {
       TimeEntity totalTime,
       TimeEntity? remainingTime,
       int totalNumberOfQuestions,
-      int? numberOfAnsweredQuestions});
+      int? numberOfAnsweredQuestions,
+      int? score,
+      String? completingDate});
 
   $TimeEntityCopyWith<$Res> get totalTime;
   $TimeEntityCopyWith<$Res>? get remainingTime;
@@ -71,6 +75,8 @@ class _$CourseEntityCopyWithImpl<$Res, $Val extends CourseEntity>
     Object? remainingTime = freezed,
     Object? totalNumberOfQuestions = null,
     Object? numberOfAnsweredQuestions = freezed,
+    Object? score = freezed,
+    Object? completingDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -105,6 +111,14 @@ class _$CourseEntityCopyWithImpl<$Res, $Val extends CourseEntity>
           ? _value.numberOfAnsweredQuestions
           : numberOfAnsweredQuestions // ignore: cast_nullable_to_non_nullable
               as int?,
+      score: freezed == score
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as int?,
+      completingDate: freezed == completingDate
+          ? _value.completingDate
+          : completingDate // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -145,7 +159,9 @@ abstract class _$$CourseEntityImplCopyWith<$Res>
       TimeEntity totalTime,
       TimeEntity? remainingTime,
       int totalNumberOfQuestions,
-      int? numberOfAnsweredQuestions});
+      int? numberOfAnsweredQuestions,
+      int? score,
+      String? completingDate});
 
   @override
   $TimeEntityCopyWith<$Res> get totalTime;
@@ -172,6 +188,8 @@ class __$$CourseEntityImplCopyWithImpl<$Res>
     Object? remainingTime = freezed,
     Object? totalNumberOfQuestions = null,
     Object? numberOfAnsweredQuestions = freezed,
+    Object? score = freezed,
+    Object? completingDate = freezed,
   }) {
     return _then(_$CourseEntityImpl(
       id: null == id
@@ -206,6 +224,14 @@ class __$$CourseEntityImplCopyWithImpl<$Res>
           ? _value.numberOfAnsweredQuestions
           : numberOfAnsweredQuestions // ignore: cast_nullable_to_non_nullable
               as int?,
+      score: freezed == score
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as int?,
+      completingDate: freezed == completingDate
+          ? _value.completingDate
+          : completingDate // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -221,7 +247,9 @@ class _$CourseEntityImpl implements _CourseEntity {
       required this.totalTime,
       this.remainingTime,
       required this.totalNumberOfQuestions,
-      this.numberOfAnsweredQuestions});
+      this.numberOfAnsweredQuestions,
+      this.score,
+      this.completingDate});
 
   @override
   final String id;
@@ -239,10 +267,14 @@ class _$CourseEntityImpl implements _CourseEntity {
   final int totalNumberOfQuestions;
   @override
   final int? numberOfAnsweredQuestions;
+  @override
+  final int? score;
+  @override
+  final String? completingDate;
 
   @override
   String toString() {
-    return 'CourseEntity(id: $id, name: $name, imageUrl: $imageUrl, isSaved: $isSaved, totalTime: $totalTime, remainingTime: $remainingTime, totalNumberOfQuestions: $totalNumberOfQuestions, numberOfAnsweredQuestions: $numberOfAnsweredQuestions)';
+    return 'CourseEntity(id: $id, name: $name, imageUrl: $imageUrl, isSaved: $isSaved, totalTime: $totalTime, remainingTime: $remainingTime, totalNumberOfQuestions: $totalNumberOfQuestions, numberOfAnsweredQuestions: $numberOfAnsweredQuestions, score: $score, completingDate: $completingDate)';
   }
 
   @override
@@ -263,7 +295,10 @@ class _$CourseEntityImpl implements _CourseEntity {
                 other.totalNumberOfQuestions == totalNumberOfQuestions) &&
             (identical(other.numberOfAnsweredQuestions,
                     numberOfAnsweredQuestions) ||
-                other.numberOfAnsweredQuestions == numberOfAnsweredQuestions));
+                other.numberOfAnsweredQuestions == numberOfAnsweredQuestions) &&
+            (identical(other.score, score) || other.score == score) &&
+            (identical(other.completingDate, completingDate) ||
+                other.completingDate == completingDate));
   }
 
   @override
@@ -276,7 +311,9 @@ class _$CourseEntityImpl implements _CourseEntity {
       totalTime,
       remainingTime,
       totalNumberOfQuestions,
-      numberOfAnsweredQuestions);
+      numberOfAnsweredQuestions,
+      score,
+      completingDate);
 
   @JsonKey(ignore: true)
   @override
@@ -294,7 +331,9 @@ abstract class _CourseEntity implements CourseEntity {
       required final TimeEntity totalTime,
       final TimeEntity? remainingTime,
       required final int totalNumberOfQuestions,
-      final int? numberOfAnsweredQuestions}) = _$CourseEntityImpl;
+      final int? numberOfAnsweredQuestions,
+      final int? score,
+      final String? completingDate}) = _$CourseEntityImpl;
 
   @override
   String get id;
@@ -312,6 +351,10 @@ abstract class _CourseEntity implements CourseEntity {
   int get totalNumberOfQuestions;
   @override
   int? get numberOfAnsweredQuestions;
+  @override
+  int? get score;
+  @override
+  String? get completingDate;
   @override
   @JsonKey(ignore: true)
   _$$CourseEntityImplCopyWith<_$CourseEntityImpl> get copyWith =>
