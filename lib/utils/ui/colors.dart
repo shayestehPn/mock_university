@@ -52,4 +52,5 @@ final shimmerHighlightColor = Colors.grey.shade100;
 
 const mainColor=Color(0xff841FFD);
 const neutral80=Color(0xff2E2E2E);
+const neutral1=Color(0xffB0B0B2);
 const backGroundColor=Color(0xffF5F7FB);

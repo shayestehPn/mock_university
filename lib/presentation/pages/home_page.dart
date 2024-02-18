@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mock_university/presentation/components/home/categories_list_content.dart';
+import 'package:get/get.dart';
+import 'package:mock_university/presentation/components/general/custom_filled_button.dart';
 import 'package:mock_university/presentation/components/general/mock_university_app_bar.dart';
+import 'package:mock_university/presentation/components/home/categories_list_content.dart';
 import 'package:mock_university/presentation/components/home/inprogress_courses_list_content.dart';
 import 'package:mock_university/presentation/components/home/popular_courses_list_content.dart';
 import 'package:mock_university/presentation/components/home/recommended_list_content.dart';
 import 'package:mock_university/presentation/components/home/top_courses_list_content.dart';
+import 'package:mock_university/presentation/pages/my_learning_page.dart';
 import 'package:mock_university/utils/ui/colors.dart';
 
 import '../../business_logic/home/home_cubit.dart';
@@ -39,26 +42,32 @@ class HomePage extends StatelessWidget {
             backgroundColor: backGroundColor,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(85.h),
-              child:  const MockUniversityAppBar(alignment: Alignment.topLeft),
+              child: const MockUniversityAppBar(alignment: Alignment.topLeft),
             ),
             body: AppRefreshIndicator(
               onRefreshFunction: () {
                 context.read<HomeCubit>().getDataForHome();
               },
-              child: Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
+              child: Stack(alignment: Alignment.bottomCenter, children: [
                 ListView(
                   shrinkWrap: false,
                   padding: const EdgeInsets.all(0),
-                  children: const [
-                    RecommendedListContent(),
-                    CategoriesListContent(),
-                    TopCoursesListContent(),
-                    PopularCoursesListContent()
+                  children: [
+                    const RecommendedListContent(),
+                    const CategoriesListContent(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 15.w, vertical: 10.h),
+                      child: CustomFilledButton(
+                          title: "my learning", onClick: () {
+                            Get.to(()=>const MyLearningPage());
+                      }),
+                    ),
+                    const TopCoursesListContent(),
+                    const PopularCoursesListContent()
                   ],
                 ),
-                    const InProgressCoursesListContent()
+                const InProgressCoursesListContent()
               ]),
             ),
           );

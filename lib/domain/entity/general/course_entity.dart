@@ -14,5 +14,7 @@ class CourseEntity with _$CourseEntity {
     TimeEntity? remainingTime,
     required int totalNumberOfQuestions,
     int? numberOfAnsweredQuestions,
+    int? score,
+    String? completingDate
   }) = _CourseEntity;
 }
