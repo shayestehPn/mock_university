@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mock_university/presentation/components/general/app_sized_box.dart';
 import 'package:mock_university/presentation/components/my_learning/mylearning_inprogress_course_card.dart';
 
 import '../../../business_logic/my_learning/my_learning_cubit.dart';
@@ -13,15 +15,17 @@ class LearningCoursesListContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MyLearningCubit, MyLearningState>(
         buildWhen: (pState, nState) {
-      return pState.selectedTabIndex != nState.selectedTabIndex;
+      return pState.selectedTabIndex != nState.selectedTabIndex || pState.myLearningData!.allCoursesList!=nState.myLearningData!.allCoursesList;
     }, builder: (context, state) {
-      return Column(
+      return ListView(
         children: [
+          const HeightSizedBox(height: 95),
           state.selectedTabIndex == 0 || state.selectedTabIndex == 1
               ? ListView.builder(
                   scrollDirection: Axis.vertical,
                   physics: const ClampingScrollPhysics(),
                   shrinkWrap: true,
+              padding: EdgeInsets.fromLTRB(33.w,0.h,33.w,0),
                   itemCount: (state.myLearningData!.inProgressCoursesList ?? [])
                       .length,
                   itemBuilder: (context, index) =>
@@ -29,7 +33,7 @@ class LearningCoursesListContent extends StatelessWidget {
                         courseEntity:
                             state.myLearningData!.inProgressCoursesList![index],
                         removeOnClick: () {
-                          //context.read<WishesCubit>().removeWishCourse(index);
+                          context.read<MyLearningCubit>().removeCourse(state.myLearningData!.inProgressCoursesList![index]);
                         },
                       ))
               : Container(),
@@ -37,6 +41,7 @@ class LearningCoursesListContent extends StatelessWidget {
               ? ListView.builder(
                   scrollDirection: Axis.vertical,
                   physics: const ClampingScrollPhysics(),
+              padding: EdgeInsets.fromLTRB(33.w,0.h,33.w,0),
                   shrinkWrap: true,
                   itemCount:
                       (state.myLearningData!.completedCoursesList ?? []).length,
@@ -45,7 +50,7 @@ class LearningCoursesListContent extends StatelessWidget {
                         courseEntity:
                             state.myLearningData!.completedCoursesList![index],
                         removeOnClick: () {
-                          //context.read<WishesCubit>().removeWishCourse(index);
+                          context.read<MyLearningCubit>().removeCourse(state.myLearningData!.completedCoursesList![index]);
                         },
                       ))
               : Container(),

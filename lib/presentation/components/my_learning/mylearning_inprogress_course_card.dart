@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mock_university/domain/entity/general/course_entity.dart';
 import 'package:mock_university/presentation/components/general/app_icon_button.dart';
-import 'package:mock_university/presentation/components/general/app_sized_box.dart';
 import 'package:mock_university/presentation/components/general/custom_cached_network_image.dart';
 import 'package:mock_university/presentation/components/general/custom_filled_button.dart';
 import 'package:mock_university/presentation/components/general/images/svg_image.dart';
-import 'package:mock_university/presentation/components/home/gradient_progress_bar.dart';
 import 'package:mock_university/utils/constants.dart';
 import 'package:mock_university/utils/extensions/context_extension.dart';
 import 'package:mock_university/utils/extensions/time_entity_formatting.dart';
@@ -25,7 +23,7 @@ class MyLearningInProgressCourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(16.w, 14.h, 16.w, 9.h),
-      margin: EdgeInsets.only(top: 29.h),
+      margin: EdgeInsets.only(top: 17.h),
       decoration: BoxDecoration(
           color: white,
           borderRadius: BorderRadius.circular(16),
