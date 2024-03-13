@@ -9,6 +9,7 @@ class EnLocalizations {
   static String get iAgree => Intl.message("I Agree", name: 'iAgree');
   static String get onBoardingSecond => Intl.message("All mock exam contains details explanations of each question, you will have opportunity to view details."
       "You can open test in Learning mode or Exam mode.", name: 'onBoardingSecond');
+  static String get about => Intl.message("About", name: 'about');
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -18,6 +19,7 @@ class EnLocalizations {
     "startPracticing": startPracticing,
     "iAgree": iAgree,
     "onBoardingSecond": onBoardingSecond,
+    "about": about,
   };
 
 }

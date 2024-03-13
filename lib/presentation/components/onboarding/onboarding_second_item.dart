@@ -15,7 +15,7 @@ class OnBoardingSecondItem extends StatelessWidget {
       children: [
         const HeightSizedBox(height: 38),
         Text(
-          "About",
+          context.localizationCubit.getTranslatedValue("about"),
           style: context.appTextTheme.titleMedium?.copyWith(fontSize: 24.sp),
         ),
         Container(

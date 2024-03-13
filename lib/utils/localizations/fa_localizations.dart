@@ -10,6 +10,7 @@ class FaLocalizations {
   static String get iAgree => Intl.message("موافقم", name: 'iAgree');
   static String get onBoardingSecond => Intl.message("تمام آزمون های آزمایشی شامل توضیحات جزئیات هر سوال است، شما فرصتی برای مشاهده جزئیات خواهید داشت."
       "می توانید تست را در حالت یادگیری یا حالت امتحان باز کنید.", name: 'onBoardingSecond');
+  static String get about => Intl.message("درباره", name: 'about');
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -19,5 +20,6 @@ class FaLocalizations {
     "startPracticing": startPracticing,
     "iAgree": iAgree,
     "onBoardingSecond": onBoardingSecond,
+    "about": about,
   };
 }
