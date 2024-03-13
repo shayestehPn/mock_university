@@ -51,7 +51,7 @@ class OnBoardingPage extends StatelessWidget {
                           Colors.grey.shade200,
                           Colors.grey.shade50,
                         ])),
-                    child: OnBoardingButtons(pageController: pageController,),
+                    child: OnBoardingButtons(pageController: pageController),
                   ),
 
                 ],

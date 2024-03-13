@@ -9,6 +9,8 @@ import 'package:mock_university/presentation/components/onboarding/onboarding_ba
 import 'package:mock_university/presentation/pages/primary_page.dart';
 import 'package:mock_university/utils/dependency_injection.dart';
 
+import '../../../business_logic/localizations/localizations_cubit.dart';
+
 class OnBoardingButtons extends StatelessWidget {
   const OnBoardingButtons({super.key, required this.pageController});
 
@@ -16,13 +18,14 @@ class OnBoardingButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   final cubit= BlocProvider.of<LocalizationCubit>(context);
     return BlocBuilder<OnBoardingCubit, int>(
       builder: (BuildContext context, int state) {
         if (state == 0) {
           return Container(
             margin: EdgeInsets.fromLTRB(44.w, 0, 44.w, 60.h),
             child: CustomFilledButton(
-              title: 'continue',
+              title: cubit.getTranslatedValue("continueText"),
               showLoading: false,
               onClick: () {
                 pageController.animateToPage(state + 1,
@@ -58,10 +61,10 @@ class OnBoardingButtons extends StatelessWidget {
                   margin: EdgeInsets.only(right: 45.w),
                   child: CustomFilledButton(
                       title: state == 3
-                          ? "I Agree"
+                          ? cubit.getTranslatedValue("iAgree")
                           : state == 4
-                              ? "start practicing"
-                              : "continue",
+                              ? cubit.getTranslatedValue("startPracticing")
+                              : cubit.getTranslatedValue("continueText"),
                       onClick: () {
                         if(state==4){
                           Get.to(()=>PrimaryPage(),binding: AppBinding());
