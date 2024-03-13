@@ -12,6 +12,9 @@ class EnLocalizations {
   static String get about => Intl.message("About", name: 'about');
   static String get onBoardingThird => Intl.message("Learning mode is not time limited and you can view answer immediately and review topic."
       "You can only review topics and correct answer after submission of the test.", name: "onBoardingThird");
+  static String get userAgreement => Intl.message("Content consent"
+      " and user agreement", name: "userAgreement");
+  static String get onBoardingForth => Intl.message("The content of all courses prepared to give best experience and knowledge on each topic. …. We do not guarantee that course content is up to date, but we are working continuously to improve the course content. <Display user agreement here with scrollable content > User must click “Agree” button before moving to the next page. We will disable the next button as long as use is not agreed.",name:"onBoardingForth");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -22,7 +25,9 @@ class EnLocalizations {
     "iAgree": iAgree,
     "onBoardingSecond": onBoardingSecond,
     "about": about,
-    "onBoardingThird":onBoardingThird
+    "onBoardingThird":onBoardingThird,
+    "userAgreement":userAgreement,
+    "onBoardingForth":onBoardingForth,
   };
 
 }

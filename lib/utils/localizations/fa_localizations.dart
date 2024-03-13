@@ -13,6 +13,9 @@ class FaLocalizations {
   static String get about => Intl.message("درباره", name: 'about');
   static String get onBoardingThird => Intl.message("حالت یادگیری محدود به زمان نیست و می توانید بلافاصله پاسخ را مشاهده کرده و موضوع را مرور کنید."
       "شما فقط می توانید پس از ارائه آزمون، موضوعات را مرور کنید و پاسخ صحیح را دریافت کنید.", name: "onBoardingThird");
+  static String get userAgreement => Intl.message("رضایت محتوا"
+      " و قرارداد کاربر", name: "userAgreement");
+  static String get onBoardingForth => Intl.message("محتوای همه دوره ها برای ارائه بهترین تجربه و دانش در مورد هر موضوع آماده شده است. .... ما تضمین نمی کنیم که محتوای دوره به روز باشد، اما به طور مداوم برای بهبود محتوای دوره کار می کنیم. <موافقت نامه کاربر را در اینجا با محتوای قابل پیمایش نمایش دهید. > کاربر باید قبل از رفتن به صفحه بعدی روی دکمه ""موافق"" کلیک کند. تا زمانی که استفاده از آن موافقت نشده باشد، دکمه بعدی را غیرفعال خواهیم کرد",name:"onBoardingForth");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -23,6 +26,8 @@ class FaLocalizations {
     "iAgree": iAgree,
     "onBoardingSecond": onBoardingSecond,
     "about": about,
-    "onBoardingThird":onBoardingThird
+    "onBoardingThird":onBoardingThird,
+    "userAgreement":userAgreement,
+    "onBoardingForth":onBoardingForth,
   };
 }

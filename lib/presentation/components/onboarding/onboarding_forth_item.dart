@@ -17,8 +17,7 @@ class OnBoardingForthItem extends StatelessWidget {
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 70.w),
         child: Text(
-          "Content consent"
-          "and user agreement",
+         context.localizationCubit.getTranslatedValue("userAgreement"),
           textAlign: TextAlign.center,
           style: context.appTextTheme.titleMedium?.copyWith(fontSize: 24.sp),
         ),
@@ -35,7 +34,7 @@ class OnBoardingForthItem extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 45.w),
           child: ScrollableTextIndicator(
             text: Text(
-              "The content of all courses prepared to give best experience and knowledge on each topic. …. We do not guarantee that course content is up to date, but we are working continuously to improve the course content. <Display user agreement here with scrollable content > User must click “Agree” button before moving to the next page. We will disable the next button as long as use is not agreed.",
+              context.localizationCubit.getTranslatedValue("onBoardingForth"),
               style: context.appTextTheme.bodyLarge,
             ),
             indicatorBarColor: const Color(0xffD7D7D7),
