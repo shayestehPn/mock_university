@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:mock_university/presentation/pages/onboarding_page.dart';
 import 'package:mock_university/utils/ui/app_theme.dart';
+import 'package:mock_university/utils/ui/custom_scroll_behavior.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,9 +29,12 @@ class App extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return GetMaterialApp(
           builder: (context, child) {
-            return MediaQuery(
-              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-              child: child ?? Container(),
+            return ScrollConfiguration(
+              behavior: CustomScrollBehavior(),
+              child: MediaQuery(
+                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                child: child ?? Container(),
+              ),
             );
           },
           debugShowCheckedModeBanner: false,

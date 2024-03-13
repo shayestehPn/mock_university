@@ -52,8 +52,8 @@ class LearningCoursesListContent extends StatelessWidget {
                         removeOnClick: () {
                           context.read<MyLearningCubit>().removeCourse(state.myLearningData!.completedCoursesList![index]);
                         },
-                      ))
-              : Container(),
+                      )) : Container(),
+          const HeightSizedBox(height: 75)
         ],
       );
     });
