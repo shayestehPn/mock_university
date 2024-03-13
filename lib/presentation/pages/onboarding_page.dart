@@ -27,35 +27,32 @@ class OnBoardingPage extends StatelessWidget {
         create: (context) => OnBoardingCubit(),
         child: Scaffold(
           body: SafeArea(
-            child: Directionality(
-              textDirection: TextDirection.ltr,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  PageView.builder(
-                      itemCount: pageViewItems.length,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      controller: pageController,
-                      itemBuilder: (context, position) {
-                        return pageViewItems[position];
-                      }),
-                  Container(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                            colors: <Color>[
-                          Colors.grey.shade400,
-                          Colors.grey.shade300,
-                          Colors.grey.shade200,
-                          Colors.grey.shade50,
-                        ])),
-                    child: OnBoardingButtons(pageController: pageController),
-                  ),
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                PageView.builder(
+                    itemCount: pageViewItems.length,
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    controller: pageController,
+                    itemBuilder: (context, position) {
+                      return pageViewItems[position];
+                    }),
+                Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: <Color>[
+                        Colors.grey.shade400,
+                        Colors.grey.shade300,
+                        Colors.grey.shade200,
+                        Colors.grey.shade50,
+                      ])),
+                  child: OnBoardingButtons(pageController: pageController),
+                ),
 
-                ],
-              ),
+              ],
             ),
           ),
         ));

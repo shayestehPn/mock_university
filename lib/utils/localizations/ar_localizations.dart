@@ -7,6 +7,8 @@ class ArLocalizations {
   static String get continueText => Intl.message("يكمل", name: 'continueText');
   static String get startPracticing => Intl.message("البدء في ممارسة", name: 'startPracticing');
   static String get iAgree => Intl.message("أنا موافق", name: 'iAgree');
+  static String get onBoardingSecond => Intl.message("تحتوي جميع الاختبارات التجريبية على شرح تفصيلي لكل سؤال، وستتاح لك الفرصة لعرض التفاصيل."
+      "يمكنك فتح الاختبار في وضع التعلم أو وضع الاختبار.", name: 'onBoardingSecond');
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -15,5 +17,6 @@ class ArLocalizations {
     'continueText': continueText,
     "startPracticing": startPracticing,
     "iAgree": iAgree,
+    "onBoardingSecond": onBoardingSecond,
   };
 }

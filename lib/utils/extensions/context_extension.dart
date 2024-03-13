@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../business_logic/localizations/localizations_cubit.dart';
 import '../constants.dart';
 import '../ui/colors.dart';
 
@@ -65,4 +67,5 @@ extension ContextExtension on BuildContext {
   }
 
   TextTheme get appTextTheme => Theme.of(this).textTheme;
+  LocalizationCubit get localizationCubit =>   BlocProvider.of<LocalizationCubit>(this);
 }

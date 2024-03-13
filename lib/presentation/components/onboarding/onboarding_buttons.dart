@@ -8,8 +8,8 @@ import 'package:mock_university/presentation/components/general/custom_filled_bu
 import 'package:mock_university/presentation/components/onboarding/onboarding_back_button.dart';
 import 'package:mock_university/presentation/pages/primary_page.dart';
 import 'package:mock_university/utils/dependency_injection.dart';
+import 'package:mock_university/utils/extensions/context_extension.dart';
 
-import '../../../business_logic/localizations/localizations_cubit.dart';
 
 class OnBoardingButtons extends StatelessWidget {
   const OnBoardingButtons({super.key, required this.pageController});
@@ -18,14 +18,13 @@ class OnBoardingButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final cubit= BlocProvider.of<LocalizationCubit>(context);
     return BlocBuilder<OnBoardingCubit, int>(
       builder: (BuildContext context, int state) {
         if (state == 0) {
           return Container(
             margin: EdgeInsets.fromLTRB(44.w, 0, 44.w, 60.h),
             child: CustomFilledButton(
-              title: cubit.getTranslatedValue("continueText"),
+              title: context.localizationCubit.getTranslatedValue("continueText"),
               showLoading: false,
               onClick: () {
                 pageController.animateToPage(state + 1,
@@ -38,7 +37,7 @@ class OnBoardingButtons extends StatelessWidget {
           );
         }
         return Padding(
-          padding: EdgeInsets.only(bottom: 60.h),
+          padding: EdgeInsets.only(bottom: 60.h,right: 45.w,left: 31.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -58,13 +57,12 @@ class OnBoardingButtons extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Container(
-                  margin: EdgeInsets.only(right: 45.w),
                   child: CustomFilledButton(
                       title: state == 3
-                          ? cubit.getTranslatedValue("iAgree")
+                          ? context.localizationCubit.getTranslatedValue("iAgree")
                           : state == 4
-                              ? cubit.getTranslatedValue("startPracticing")
-                              : cubit.getTranslatedValue("continueText"),
+                              ? context.localizationCubit.getTranslatedValue("startPracticing")
+                              : context.localizationCubit.getTranslatedValue("continueText"),
                       onClick: () {
                         if(state==4){
                           Get.to(()=>PrimaryPage(),binding: AppBinding());

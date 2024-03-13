@@ -14,7 +14,6 @@ class OnBoardingBackButton extends StatelessWidget {
     return GestureDetector(
       child: Container(
         height: 48.h,
-        margin: EdgeInsets.only(left: 31.w),
         decoration: BoxDecoration(
           color: const Color(0xffF5F7FB),
           borderRadius: BorderRadius.circular(8),

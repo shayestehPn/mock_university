@@ -27,8 +27,7 @@ class OnBoardingSecondItem extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 45.w),
           child: Text(
-            "All mock exam contains details explanations of each question, you will have opportunity to view details."
-            "You can open test in Learning mode or Exam mode.",
+            context.localizationCubit.getTranslatedValue("onBoardingSecond"),
             textAlign: TextAlign.center,
             style: context.appTextTheme.bodyLarge,
           ),
