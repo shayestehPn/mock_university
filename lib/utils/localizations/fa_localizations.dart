@@ -11,6 +11,8 @@ class FaLocalizations {
   static String get onBoardingSecond => Intl.message("تمام آزمون های آزمایشی شامل توضیحات جزئیات هر سوال است، شما فرصتی برای مشاهده جزئیات خواهید داشت."
       "می توانید تست را در حالت یادگیری یا حالت امتحان باز کنید.", name: 'onBoardingSecond');
   static String get about => Intl.message("درباره", name: 'about');
+  static String get onBoardingThird => Intl.message("حالت یادگیری محدود به زمان نیست و می توانید بلافاصله پاسخ را مشاهده کرده و موضوع را مرور کنید."
+      "شما فقط می توانید پس از ارائه آزمون، موضوعات را مرور کنید و پاسخ صحیح را دریافت کنید.", name: "onBoardingThird");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -21,5 +23,6 @@ class FaLocalizations {
     "iAgree": iAgree,
     "onBoardingSecond": onBoardingSecond,
     "about": about,
+    "onBoardingThird":onBoardingThird
   };
 }

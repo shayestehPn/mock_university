@@ -15,7 +15,7 @@ class OnBoardingThirdItem extends StatelessWidget {
       children: [
         const HeightSizedBox(height: 38),
         Text(
-          "About",
+          context.localizationCubit.getTranslatedValue("about"),
           style: context.appTextTheme.titleMedium?.copyWith(fontSize: 24.sp),
         ),
         Container(
@@ -27,8 +27,7 @@ class OnBoardingThirdItem extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 45.w),
           child: Text(
-           "Learning mode is not time limited and you can view answer immediately and review topic."
-            "You can only review topics and correct answer after submission of the test.",
+           context.localizationCubit.getTranslatedValue("onBoardingThird"),
             textAlign: TextAlign.center,
             style: context.appTextTheme.bodyLarge,
           ),

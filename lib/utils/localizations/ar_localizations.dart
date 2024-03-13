@@ -10,6 +10,9 @@ class ArLocalizations {
   static String get onBoardingSecond => Intl.message("تحتوي جميع الاختبارات التجريبية على شرح تفصيلي لكل سؤال، وستتاح لك الفرصة لعرض التفاصيل."
       "يمكنك فتح الاختبار في وضع التعلم أو وضع الاختبار.", name: 'onBoardingSecond');
   static String get about => Intl.message("عن", name: 'about');
+  static String get onBoardingThird => Intl.message("وضع التعلم ليس محدودًا بالوقت ويمكنك عرض الإجابة على الفور ومراجعة الموضوع."
+      "لا يمكنك مراجعة المواضيع والإجابة الصحيحة إلا بعد تقديم الاختبار.", name: "Learning mode is not time limited and you can view answer immediately and review topic."
+      "You can only review topics and correct answer after submission of the test.");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -20,5 +23,6 @@ class ArLocalizations {
     "iAgree": iAgree,
     "onBoardingSecond": onBoardingSecond,
     "about": about,
+    "onBoardingThird":onBoardingThird
   };
 }

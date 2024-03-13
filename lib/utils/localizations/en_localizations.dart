@@ -10,6 +10,8 @@ class EnLocalizations {
   static String get onBoardingSecond => Intl.message("All mock exam contains details explanations of each question, you will have opportunity to view details."
       "You can open test in Learning mode or Exam mode.", name: 'onBoardingSecond');
   static String get about => Intl.message("About", name: 'about');
+  static String get onBoardingThird => Intl.message("Learning mode is not time limited and you can view answer immediately and review topic."
+      "You can only review topics and correct answer after submission of the test.", name: "onBoardingThird");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -20,6 +22,7 @@ class EnLocalizations {
     "iAgree": iAgree,
     "onBoardingSecond": onBoardingSecond,
     "about": about,
+    "onBoardingThird":onBoardingThird
   };
 
 }
