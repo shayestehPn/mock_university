@@ -13,8 +13,8 @@ class EnLocalizations {
     'mockUniversity': mockUniversity,
     'onBoardingFirst': onBoardingFirst,
     'continueText': continueText,
-    '"startPracticing"': startPracticing,
-    '"iAgree"': iAgree,
+    "startPracticing": startPracticing,
+    "iAgree": iAgree,
   };
 
 }
