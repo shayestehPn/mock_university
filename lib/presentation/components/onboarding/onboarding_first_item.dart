@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mock_university/business_logic/localizations/localizations_cubit.dart';
 import 'package:mock_university/presentation/components/general/images/png_image.dart';
 import 'package:mock_university/utils/extensions/context_extension.dart';
 import 'package:mock_university/utils/ui/colors.dart';
@@ -11,40 +13,44 @@ class OnBoardingFirstItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const HeightSizedBox(height: 38),
-        Text(
-          context.localizationCubit.getTranslatedValue("welcome"),
-          style: context.appTextTheme.titleMedium?.copyWith(fontSize: 24.sp),
-        ),
-        Container(
-          height: 207.h,
-          width: 300.w,
-          margin: EdgeInsets.symmetric(vertical: 70.h),
-          child: PngImage.learningImage,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 45.w),
-          child: RichText(
-            textAlign: TextAlign.center,
-            textDirection: TextDirection.rtl,
-            text: TextSpan(children: <TextSpan>[
-              TextSpan(
-                text: context.localizationCubit
-                    .getTranslatedValue("mockUniversity"),
-                style:
+    return BlocBuilder<LocalizationCubit,Locale>(
+      builder: ( context,locale ) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const HeightSizedBox(height: 38),
+            Text(
+              context.localizationCubit.getTranslatedValue("welcome"),
+              style: context.appTextTheme.titleMedium?.copyWith(fontSize: 24.sp),
+            ),
+            Container(
+              height: 207.h,
+              width: 300.w,
+              margin: EdgeInsets.symmetric(vertical: 70.h),
+              child: PngImage.learningImage,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 45.w),
+              child: RichText(
+                textAlign: TextAlign.center,
+                textDirection: TextDirection.rtl,
+                text: TextSpan(children: <TextSpan>[
+                  TextSpan(
+                    text: context.localizationCubit
+                        .getTranslatedValue("mockUniversity"),
+                    style:
                     context.appTextTheme.bodyLarge?.copyWith(color: mainColor),
-              ),
-              TextSpan(
-                  text:
+                  ),
+                  TextSpan(
+                      text:
                       " ${context.localizationCubit.getTranslatedValue("onBoardingFirst")}",
-                  style: context.appTextTheme.bodyLarge)
-            ]),
-          ),
-        ),
-      ],
+                      style: context.appTextTheme.bodyLarge)
+                ]),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

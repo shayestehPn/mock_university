@@ -56,27 +56,25 @@ class OnBoardingButtons extends StatelessWidget {
               const WidthSizedBox(width: 27),
               Expanded(
                 flex: 2,
-                child: Container(
-                  child: CustomFilledButton(
-                      title: state == 3
-                          ? context.localizationCubit.getTranslatedValue("iAgree")
-                          : state == 4
-                              ? context.localizationCubit.getTranslatedValue("startPracticing")
-                              : context.localizationCubit.getTranslatedValue("continueText"),
-                      onClick: () {
-                        if(state==4){
-                          Get.to(()=>PrimaryPage(),binding: AppBinding());
-                        }else{
-                          pageController.animateToPage(state + 1,
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.linear);
+                child: CustomFilledButton(
+                    title: state == 3
+                        ? context.localizationCubit.getTranslatedValue("iAgree")
+                        : state == 4
+                            ? context.localizationCubit.getTranslatedValue("startPracticing")
+                            : context.localizationCubit.getTranslatedValue("continueText"),
+                    onClick: () {
+                      if(state==4){
+                        Get.to(()=>PrimaryPage(),binding: AppBinding());
+                      }else{
+                        pageController.animateToPage(state + 1,
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.linear);
 
-                          context
-                              .read<OnBoardingCubit>()
-                              .increaseCurrentPageIndex();
-                        }
-                      }),
-                ),
+                        context
+                            .read<OnBoardingCubit>()
+                            .increaseCurrentPageIndex();
+                      }
+                    }),
               )
             ],
           ),

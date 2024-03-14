@@ -15,6 +15,11 @@ class ArLocalizations {
       "You can only review topics and correct answer after submission of the test.");
   static String get userAgreement => Intl.message("الموافقة على المحتوى""واتفاقية المستخدم", name: "userAgreement");
   static String get onBoardingForth => Intl.message("تم إعداد محتوى جميع الدورات التدريبية لتقديم أفضل الخبرات والمعرفة في كل موضوع. .... نحن لا نضمن أن محتوى الدورة محدث، ولكننا نعمل بشكل مستمر على تحسين محتوى الدورة. <عرض اتفاقية المستخدم هنا مع المحتوى القابل للتمرير > يجب على المستخدم النقر فوق الزر موافقة. وسنقوم بتعطيل الزر التالي طالما لم يتم الاتفاق على الاستخدام.,",name:"onBoardingForth");
+  static String get congratulations => Intl.message("تهانينا!",name:"congratulations");
+  static String get onBoardingFifth => Intl.message("لقد وصلت إلى نهاية المقدمة. نحن متحمسون لتسجيلك في جامعتنا الصورية عبر الإنترنت."
+      "شكرًا لاختيارك لنا وسعيد بالسخرية!\n"
+      "\nأطيب التمنيات"
+      "\nجامعة وهمية",name:"onBoardingFifth");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -28,5 +33,7 @@ class ArLocalizations {
     "onBoardingThird":onBoardingThird,
     "userAgreement":userAgreement,
     "onBoardingForth":onBoardingForth,
+    "congratulations":congratulations,
+    "onBoardingFifth":onBoardingFifth,
   };
 }

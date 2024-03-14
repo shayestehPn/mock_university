@@ -15,6 +15,11 @@ class EnLocalizations {
   static String get userAgreement => Intl.message("Content consent"
       " and user agreement", name: "userAgreement");
   static String get onBoardingForth => Intl.message("The content of all courses prepared to give best experience and knowledge on each topic. …. We do not guarantee that course content is up to date, but we are working continuously to improve the course content. <Display user agreement here with scrollable content > User must click “Agree” button before moving to the next page. We will disable the next button as long as use is not agreed.",name:"onBoardingForth");
+  static String get congratulations => Intl.message("Congratulations!",name:"congratulations");
+  static String get onBoardingFifth => Intl.message("You have reached the end of our introduction. We are excited to enroll you to our online Mock University."
+      "Thank you for choosing us and “Happy Mocking !\n"
+      "\nBest Wishes"
+      "\nMock University",name:"onBoardingFifth");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -28,6 +33,8 @@ class EnLocalizations {
     "onBoardingThird":onBoardingThird,
     "userAgreement":userAgreement,
     "onBoardingForth":onBoardingForth,
+    "congratulations":congratulations,
+    "onBoardingFifth":onBoardingFifth,
   };
 
 }

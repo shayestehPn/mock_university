@@ -16,6 +16,11 @@ class FaLocalizations {
   static String get userAgreement => Intl.message("رضایت محتوا"
       " و قرارداد کاربر", name: "userAgreement");
   static String get onBoardingForth => Intl.message("محتوای همه دوره ها برای ارائه بهترین تجربه و دانش در مورد هر موضوع آماده شده است. .... ما تضمین نمی کنیم که محتوای دوره به روز باشد، اما به طور مداوم برای بهبود محتوای دوره کار می کنیم. <موافقت نامه کاربر را در اینجا با محتوای قابل پیمایش نمایش دهید. > کاربر باید قبل از رفتن به صفحه بعدی روی دکمه ""موافق"" کلیک کند. تا زمانی که استفاده از آن موافقت نشده باشد، دکمه بعدی را غیرفعال خواهیم کرد",name:"onBoardingForth");
+  static String get congratulations => Intl.message("تبریک!",name:"congratulations");
+  static String get onBoardingFifth => Intl.message("شما به پایان معرفی ما رسیده اید. ما بسیار هیجان زده هستیم که شما را در دانشگاه موک آنلاین خود ثبت نام کنیم."
+      "از اینکه ما را انتخاب کردید متشکریم"
+  "\nبهترین آرزوها"
+  "\nدانشگاه ساختگی",name:"onBoardingFifth");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -29,5 +34,7 @@ class FaLocalizations {
     "onBoardingThird":onBoardingThird,
     "userAgreement":userAgreement,
     "onBoardingForth":onBoardingForth,
+    "congratulations":congratulations,
+    "onBoardingFifth":onBoardingFifth,
   };
 }
