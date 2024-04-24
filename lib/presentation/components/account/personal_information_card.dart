@@ -24,13 +24,13 @@ class PersonalInformationCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Personal Info",
+          Text(context.localizationCubit.getTranslatedValue("personalInfo"),
               style: context.appTextTheme.titleMedium
                   ?.copyWith(fontWeight: FontWeight.w700)),
           const HeightSizedBox(height: 24),
-          dataRow("Your name",userEntity.name,context),
-          dataRow("Education Level",userEntity.educationLevel,context),
-          dataRow("Address",userEntity.address,context),
+          dataRow("yourName",userEntity.name,context),
+          dataRow("educationLevel",userEntity.educationLevel,context),
+          dataRow("address",userEntity.address,context),
         ],
       ),
     );
@@ -42,7 +42,7 @@ class PersonalInformationCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(firstValue,
+          Text(context.localizationCubit.getTranslatedValue(firstValue),
               style: context.appTextTheme.titleSmall
                   ?.copyWith(color: const Color(0xff3B3B3B))),
           Text(secondValue, style: context.appTextTheme.titleSmall),

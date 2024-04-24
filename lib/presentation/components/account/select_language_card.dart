@@ -27,9 +27,9 @@ class SelectLanguageCard extends StatelessWidget {
               style: context.appTextTheme.titleMedium
                   ?.copyWith(fontWeight: FontWeight.w700)),
           const HeightSizedBox(height: 24),
-          SelectLanguageRow(locale: const Locale('en'),),
-          SelectLanguageRow(locale: const Locale('fa'),),
-          SelectLanguageRow(locale: const Locale('ar'),),
+          SelectLanguageRow(locale: const Locale('en')),
+          SelectLanguageRow(locale: const Locale('fa')),
+          SelectLanguageRow(locale: const Locale('ar')),
         ],
       ),
     );

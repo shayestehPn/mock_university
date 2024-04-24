@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mock_university/business_logic/localizations/localizations_cubit.dart';
 import 'package:mock_university/presentation/components/account/account_image_card.dart';
 import 'package:mock_university/presentation/components/account/personal_information_card.dart';
 import 'package:mock_university/presentation/components/general/app_sized_box.dart';
@@ -21,11 +22,7 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AccountCubit>(
-      create: (context) {
-        final cubit = AccountCubit();
-        cubit.getUserData();
-        return cubit;
-      },
+      create: (context)=>AccountCubit()..getUserData(),
       child: BlocBuilder<AccountCubit, AccountState>(
         buildWhen: (pState, nState) {
           return pState.getUserDataStatus != nState.getUserDataStatus;
@@ -36,33 +33,37 @@ class AccountPage extends StatelessWidget {
               state.getUserDataStatus == ApiRequestStatus.failure) {
             return Container();
           }
-          return Scaffold(
-            backgroundColor: backGroundColor,
-            appBar: PreferredSize(
-              preferredSize: Size.fromHeight(78.h),
-              child: const MockUniversityAppBar(alignment: Alignment.center),
-            ),
-            body: AppRefreshIndicator(
-                onRefreshFunction: () {
-                  context.read<AccountCubit>().getUserData();
-                },
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: [
-                    AccountImageCard(userEntity: state.userEntity!),
-                    PersonalInformationCard(userEntity: state.userEntity!),
-                    ContactInformationCard(userEntity: state.userEntity!),
-                    const SelectLanguageCard(),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 48.w),
-                      child: CustomFilledButton(
-                        title: 'Edit',
-                        onClick: () {},
-                      ),
-                    ),
-                    const HeightSizedBox(height: 100)
-                  ],
-                )),
+          return BlocBuilder<LocalizationCubit,Locale>(
+            builder: ( context, locale ) {
+              return  Scaffold(
+                backgroundColor: backGroundColor,
+                appBar: PreferredSize(
+                  preferredSize: Size.fromHeight(78.h),
+                  child:  MockUniversityAppBar(alignment: Alignment.center),
+                ),
+                body: AppRefreshIndicator(
+                    onRefreshFunction: () {
+                      context.read<AccountCubit>().getUserData();
+                    },
+                    child: ListView(
+                      padding: EdgeInsets.zero,
+                      children: [
+                        AccountImageCard(userEntity: state.userEntity!),
+                        PersonalInformationCard(userEntity: state.userEntity!),
+                        ContactInformationCard(userEntity: state.userEntity!),
+                        const SelectLanguageCard(),
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 48.w),
+                          child: CustomFilledButton(
+                            title: 'Edit',
+                            onClick: () {},
+                          ),
+                        ),
+                        const HeightSizedBox(height: 100)
+                      ],
+                    )),
+              );
+            },
           );
         },
       ),

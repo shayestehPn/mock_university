@@ -24,12 +24,12 @@ class ContactInformationCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Contact Info",
+          Text(context.localizationCubit.getTranslatedValue("contactInfo"),
               style: context.appTextTheme.titleMedium
                   ?.copyWith(fontWeight: FontWeight.w700)),
           const HeightSizedBox(height: 24),
-          dataRow("Phone number",userEntity.mobilePhoneNumber,context),
-          dataRow("Email",userEntity.email,context),
+          dataRow("phoneNumber",userEntity.mobilePhoneNumber,context),
+          dataRow("email",userEntity.email,context),
         ],
       ),
     );
@@ -41,7 +41,7 @@ class ContactInformationCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(firstValue,
+          Text(context.localizationCubit.getTranslatedValue(firstValue),
               style: context.appTextTheme.titleSmall
                   ?.copyWith(color: const Color(0xff3B3B3B))),
           Text(secondValue, style: context.appTextTheme.titleSmall),

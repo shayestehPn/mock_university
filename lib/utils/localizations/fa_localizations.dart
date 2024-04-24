@@ -21,6 +21,18 @@ class FaLocalizations {
       "از اینکه ما را انتخاب کردید متشکریم"
   "\nبهترین آرزوها"
   "\nدانشگاه ساختگی",name:"onBoardingFifth");
+  static String get mock => Intl.message("تقلیدی",name:"mock");
+  static String get university => Intl.message("دانشگاه",name:"university");
+  static String get personalInfo => Intl.message("اطلاعات شخصی",name:"personalInfo");
+  static String get yourName => Intl.message("نام شما",name:"yourName");
+  static String get educationLevel => Intl.message("سطح تحصیلات",name:"educationLevel");
+  static String get address => Intl.message("آدرس",name:"address");
+  static String get contactInfo => Intl.message("اطلاعات تماس",name:"contactInfo");
+  static String get phoneNumber => Intl.message("شماره تلفن",name:"phoneNumber");
+  static String get email => Intl.message("ایمیل",name:"email");
+  static String get english => Intl.message("انگلیسی",name:"english");
+  static String get persian => Intl.message("فارسی",name:"persian");
+  static String get arabic => Intl.message("عربی",name:"arabic");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -36,5 +48,17 @@ class FaLocalizations {
     "onBoardingForth":onBoardingForth,
     "congratulations":congratulations,
     "onBoardingFifth":onBoardingFifth,
+    "mock":mock,
+    "university":university,
+    "personalInfo":personalInfo,
+    "yourName":yourName,
+    "educationLevel":educationLevel,
+    "address":address,
+    "contactInfo":contactInfo,
+    "phoneNumber":phoneNumber,
+    "email":email,
+    "english":english,
+    "persian":persian,
+    "arabic":arabic,
   };
 }

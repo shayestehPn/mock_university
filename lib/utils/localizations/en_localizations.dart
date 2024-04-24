@@ -20,6 +20,18 @@ class EnLocalizations {
       "Thank you for choosing us and “Happy Mocking !\n"
       "\nBest Wishes"
       "\nMock University",name:"onBoardingFifth");
+  static String get mock => Intl.message("Mock",name:"mock");
+  static String get university => Intl.message("University",name:"university");
+  static String get personalInfo => Intl.message("Personal Info",name:"personalInfo");
+  static String get yourName => Intl.message("Your name",name:"yourName");
+  static String get educationLevel => Intl.message("Education Level",name:"educationLevel");
+  static String get address => Intl.message("Address",name:"address");
+  static String get contactInfo => Intl.message("Contact Info",name:"contactInfo");
+  static String get phoneNumber => Intl.message("Phone number",name:"phoneNumber");
+  static String get email => Intl.message("Email",name:"email");
+  static String get english => Intl.message("English",name:"english");
+  static String get persian => Intl.message("Persian",name:"persian");
+  static String get arabic => Intl.message("Arabic",name:"arabic");
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -35,6 +47,18 @@ class EnLocalizations {
     "onBoardingForth":onBoardingForth,
     "congratulations":congratulations,
     "onBoardingFifth":onBoardingFifth,
+    "mock":mock,
+    "university":university,
+    "personalInfo":personalInfo,
+    "yourName":yourName,
+    "educationLevel":educationLevel,
+    "address":address,
+    "contactInfo":contactInfo,
+    "phoneNumber":phoneNumber,
+    "email":email,
+    "english":english,
+    "persian":persian,
+    "arabic":arabic,
   };
 
 }

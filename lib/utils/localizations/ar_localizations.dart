@@ -20,6 +20,20 @@ class ArLocalizations {
       "شكرًا لاختيارك لنا وسعيد بالسخرية!\n"
       "\nأطيب التمنيات"
       "\nجامعة وهمية",name:"onBoardingFifth");
+  static String get mock => Intl.message("وهمية",name:"mock");
+  static String get university => Intl.message("جامعة",name:"university");
+  static String get personalInfo => Intl.message("معلومات شخصية",name:"personalInfo");
+  static String get yourName => Intl.message("اسمك",name:"yourName");
+  static String get educationLevel => Intl.message("مستوى التعليم",name:"educationLevel");
+  static String get address => Intl.message("عنوان",name:"address");
+  static String get contactInfo => Intl.message("معلومات الاتصال",name:"contactInfo");
+  static String get phoneNumber => Intl.message("رقم التليفون",name:"phoneNumber");
+  static String get email => Intl.message("بريد إلكتروني",name:"email");
+  static String get english => Intl.message("إنجليزي",name:"english");
+  static String get persian => Intl.message("اللغة الفارسية",name:"persian");
+  static String get arabic => Intl.message("عربي",name:"arabic");
+  static String get edit => Intl.message("يحرر",name:"edit");
+
 
   static final keyToFunctionMap = {
     'welcome': welcome,
@@ -35,5 +49,18 @@ class ArLocalizations {
     "onBoardingForth":onBoardingForth,
     "congratulations":congratulations,
     "onBoardingFifth":onBoardingFifth,
+    "mock":mock,
+    "university":university,
+    "personalInfo":personalInfo,
+    "yourName":yourName,
+    "educationLevel":educationLevel,
+    "address":address,
+    "contactInfo":contactInfo,
+    "phoneNumber":phoneNumber,
+    "email":email,
+    "english":english,
+    "persian":persian,
+    "arabic":arabic,
+    "edit":edit
   };
 }

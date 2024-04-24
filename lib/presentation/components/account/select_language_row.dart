@@ -19,7 +19,7 @@ class SelectLanguageRow extends StatelessWidget {
       return Row(
         children: [
           Text(
-            getLanguageText(locale),
+            getLanguageText(locale,context),
             style: context.appTextTheme.titleSmall
                 ?.copyWith(color: const Color(0xff3B3B3B)),
           ),
@@ -46,13 +46,13 @@ class SelectLanguageRow extends StatelessWidget {
     });
   }
 
-  String getLanguageText(Locale locale) {
+  String getLanguageText(Locale locale,BuildContext context) {
     if (locale == const Locale('en')) {
-      return "English";
+      return context.localizationCubit.getTranslatedValue("english");
     } else if (locale == const Locale('fa')) {
-      return "Persian";
+      return context.localizationCubit.getTranslatedValue("persian");
     } else {
-      return "Arabic";
+      return context.localizationCubit.getTranslatedValue("arabic");
     }
   }
 }

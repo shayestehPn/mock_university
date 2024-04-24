@@ -13,7 +13,7 @@ class MyLearningTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
       children: [
-        const MockUniversityAppBar(alignment: Alignment.centerLeft),
+         MockUniversityAppBar(alignment: Alignment.centerLeft),
         Container(
             height: 16.h,
           color: backGroundColor,

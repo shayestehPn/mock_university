@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
             backgroundColor: backGroundColor,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(85.h),
-              child: const MockUniversityAppBar(alignment: Alignment.topLeft),
+              child:  MockUniversityAppBar(alignment: Alignment.topLeft),
             ),
             body: AppRefreshIndicator(
               onRefreshFunction: () {

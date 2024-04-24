@@ -42,7 +42,7 @@ class SearchPage extends StatelessWidget {
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(69.h),
               child:
-                  const MockUniversityAppBar(alignment: Alignment.centerLeft),
+                   MockUniversityAppBar(alignment: Alignment.centerLeft),
             ),
             body: ListView(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
